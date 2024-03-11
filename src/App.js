@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const appVersion = "v11.03.24.04";
+  const appVersion = "v11.03.24.06";
   console.log(appVersion, "appVersion");
   return (
     <div className="App">
