@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const appVersion = "v11.03.24.02"
   return (
     <div className="App">
       <header className="App-header">
