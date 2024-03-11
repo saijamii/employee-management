@@ -10,6 +10,8 @@ import Request from "./Pages/Employee/Request";
 import Report from "./Pages/Report/Report";
 
 function App() {
+  const appVersion = "v11.03.24.08";
+  console.log(appVersion, "appVersion");
   return (
     <Router>
       <Layout>
