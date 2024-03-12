@@ -1,10 +1,10 @@
 import React from "react";
-import { Route, Routes, Link, useLocation} from "react-router-dom";
+import { Route, Routes, Link} from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 import styles from '../StyleSheet/Sidebar.module.css'
 
 const Layout = () => {
-    const location = useLocation();
+    // const location = useLocation();
   return (
     <>
       <div className="container-fluid">
