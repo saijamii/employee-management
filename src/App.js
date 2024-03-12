@@ -8,20 +8,22 @@ import Employee from "./Pages/Employee/Employee";
 import Salary from "./Pages/Employee/Salary";
 import Request from "./Pages/Employee/Request";
 import Report from "./Pages/Report/Report";
+import Login from "./Pages/Login/Login.js";
 
 function App() {
   return (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/app/dashboard" element={<Dashboard />} />
           <Route path="/app/department" element={<Department />} />
           <Route path="/app/leaveType" element={<LeaveType />} />
           <Route path="/app/employee" element={<Employee />} />
           <Route path="/app/salary" element={<Salary />} />
           <Route path="/app/request" element={<Request />} />
           <Route path="/app/report" element={<Report />} />
-
         </Routes>
       </Layout>
     </Router>
