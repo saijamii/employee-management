@@ -11,6 +11,8 @@ import Report from "./Pages/Report/Report";
 import Login from "./Pages/Login/Login.js";
 
 function App() {
+  const appVersion = "v12.03.24.02";
+  console.log(appVersion, "appVersion");
   return (
     <Router>
       <Layout>
