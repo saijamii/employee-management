@@ -1,0 +1,20 @@
+/* Sidebar.module.css */
+.sidebar {
+    height: 97vh;
+    margin: 15px;
+    border-radius: 20px;
+    width: 15vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .navItem {
+    color: white;
+    padding: 10px;
+  }
+  
+  .navItem.active {
+    /* background-color:#3b95ef;     */
+  }
+  
