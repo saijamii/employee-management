@@ -14,7 +14,6 @@ const LeaveType = () => {
                 <i
                   class="bi bi-umbrella-fill"
                   style={{ marginLeft: "53px", fontSize: "52px" }}
-                  
                 ></i>
               </Card.Text>
               <Card.Text className="align-sentace">Available : 10</Card.Text>
