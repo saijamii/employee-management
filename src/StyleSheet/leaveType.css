@@ -31,3 +31,8 @@ p.align-Booked.card-text {
 .table-data {
     margin-top: 16px;
 }
+button.btn.btn-secondary.btn-sm.dropdown-toggle {
+    left: 232px;
+    background-color: transparent;
+    color: #333;
+}
