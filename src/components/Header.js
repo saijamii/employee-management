@@ -6,8 +6,8 @@ const Header = (props) => {
     <header className="py-4 fixed">
       <div className="container">
         <nav
-          class="navbar navbar-light bg-white justify-content-between"
-          style={{ borderRadius: "15px", width: "83vw",zIndex:"+9"}}
+          className="navbar navbar-light bg-white justify-content-between"
+          style={{ borderRadius: "15px", width: "80vw" }}
         >
           <div className="container">
             <div className="row justify-content-md-center">
