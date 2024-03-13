@@ -4,6 +4,7 @@ import styles from "../StyleSheet/Sidebar.module.css";
 
 const Sidebar = ({ itemClickHandler }) => {
   const [active, setActive] = useState(0);
+  const appVersion = "v13.03.24.02";
 
   return (
     <div className={`${styles.sidebar} bg-dark`}>
@@ -204,6 +205,9 @@ const Sidebar = ({ itemClickHandler }) => {
               <Link className="dropdown-item" to="/app/logout">
                 Sign out
               </Link>
+            </li>
+            <li>
+              <div className="dropdown-item">{appVersion}</div>
             </li>
           </ul>
         </div>
