@@ -105,7 +105,30 @@ const LeaveType = () => {
                 <th scope="col">Dates</th>
                 <th scope="col">Festivals</th>
                 <th scope="col">Slogans</th>
-                <th scope="col"></th>
+                <th scope="col">
+                  <div class="btn-group">
+                    <button
+                      class="btn btn-secondary btn-sm dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Only Holidays
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          Leaves
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          Festival Leaves
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </th>
               </tr>
             </thead>
             <tbody>
