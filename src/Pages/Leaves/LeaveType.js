@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Modal, Button, Form } from "react-bootstrap";
-import styles from "../../StyleSheet/leaveType.css";
+// import styles from "../../StyleSheet/leaveType.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -80,7 +80,9 @@ const LeaveType = () => {
                   </Form.Group> */}
 
                   <Form.Group controlId="startDate">
-                    <Form.Label style={{marginTop:"10px"}}>Date: From</Form.Label>
+                    <Form.Label style={{ marginTop: "10px" }}>
+                      Date: From
+                    </Form.Label>
                     <br />
                     <DatePicker
                       selected={startDate}
@@ -89,7 +91,9 @@ const LeaveType = () => {
                   </Form.Group>
 
                   <Form.Group controlId="endDate">
-                    <Form.Label style={{marginTop:"10px"}}>Date: End</Form.Label>
+                    <Form.Label style={{ marginTop: "10px" }}>
+                      Date: End
+                    </Form.Label>
                     <br />
                     <DatePicker
                       selected={endDate}
@@ -98,7 +102,9 @@ const LeaveType = () => {
                   </Form.Group>
 
                   <Form.Group controlId="teamEmailId">
-                    <Form.Label style={{marginTop:"10px"}}>Team Email Id:</Form.Label>
+                    <Form.Label style={{ marginTop: "10px" }}>
+                      Team Email Id:
+                    </Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="Enter Team Email Id"
@@ -106,25 +112,24 @@ const LeaveType = () => {
                   </Form.Group>
 
                   <Form.Group controlId="reasonForLeave">
-                    <Form.Label style={{marginTop:"10px"}}>Reason For Leave:</Form.Label>
+                    <Form.Label style={{ marginTop: "10px" }}>
+                      Reason For Leave:
+                    </Form.Label>
                     <Form.Control
                       as="textarea"
                       rows={3}
                       placeholder="Enter Reason For Leave"
                     />
                   </Form.Group>
-
-             
                 </Form>
               </Modal.Body>
               <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+                <Button variant="secondary" onClick={handleClose}>
                   Cancel
                 </Button>
-              <Button variant="primary" type="submit">
-                    Submit
-                  </Button>
-               
+                <Button variant="primary" type="submit">
+                  Submit
+                </Button>
               </Modal.Footer>
             </Modal>
           </div>
@@ -224,12 +229,12 @@ const LeaveType = () => {
                       </button>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="#">
+                          <a class="dropdown-item" href="/#">
                             Leaves
                           </a>
                         </li>
                         <li>
-                          <a class="dropdown-item" href="#">
+                          <a class="dropdown-item" href="/#">
                             Festival Leaves
                           </a>
                         </li>
