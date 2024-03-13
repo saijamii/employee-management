@@ -97,6 +97,154 @@ const LeaveType = () => {
           </Card>
         </div>
       </div>
+      <div className="table-data">
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Dates</th>
+                <th scope="col">Festivals</th>
+                <th scope="col">Slogans</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 1-Jan
+                </th>
+                <td>New Year</td>
+                <td>Otto</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 25-Dec
+                </th>
+                <td>Christmas</td>
+                <td>Thornton</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 30-Nov
+                </th>
+                <td>Diwali</td>
+                <td>Larry the Bird</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 24-Mar
+                </th>
+                <td>Holi</td>
+                <td>Your slogan here</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 12-Apr
+                </th>
+                <td>Eid</td>
+                <td>Your slogan here</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 1-Jan
+                </th>
+                <td>New Year</td>
+                <td>Otto</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 25-Dec
+                </th>
+                <td>Christmas</td>
+                <td>Thornton</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"> </i> 30-Nov
+                </th>
+                <td>Diwali</td>
+                <td>Larry the Bird</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <i class="bi bi-calendar-check"></i> 24-Mar
+                </th>
+                <td>Holi</td>
+                <td>Your slogan here</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"></i> 12-Apr
+                </th>
+                <td>Eid</td>
+                <td>Your slogan here</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <i class="bi bi-calendar-check"></i> 1-Jan
+                </th>
+                <td>New Year</td>
+                <td>Otto</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"></i> 25-Dec
+                </th>
+                <td>Christmas</td>
+                <td>Thornton</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <i class="bi bi-calendar-check"></i> 30-Nov
+                </th>
+                <td>Diwali</td>
+                <td>Larry the Bird</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"></i> 24-Mar
+                </th>
+                <td>Holi</td>
+                <td>Your slogan here</td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  {" "}
+                  <i class="bi bi-calendar-check"></i>12-Apr
+                </th>
+                <td>Eid</td>
+                <td>Your slogan here</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   );
 };
