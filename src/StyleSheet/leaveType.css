@@ -32,7 +32,22 @@ p.align-Booked.card-text {
     margin-top: 16px;
 }
 button.btn.btn-secondary.btn-sm.dropdown-toggle {
-    left: 232px;
+    left: 208px;
     background-color: transparent;
     color: #333;
+}
+.card-design.all.card {
+    right: 22px;
+    width: 100%;
+}
+.row.claass {
+    display: flex;
+    margin-top: 32px;
+}
+header.fixed nav.navbar {
+    position: fixed;
+    top: 15px;
+}
+input[type="text"] {
+    width: 464px;
 }
