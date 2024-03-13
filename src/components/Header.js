@@ -2,11 +2,11 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="py-4">
+    <header className="py-4 fixed">
       <div className="container">
         <nav
           class="navbar navbar-light bg-white justify-content-between"
-          style={{ borderRadius: "15px", width: "80vw" }}
+          style={{ borderRadius: "15px", width: "83vw",zIndex:"+9"}}
         >
           <div class="row">
             <div class="col-sm-8">
