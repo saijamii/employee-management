@@ -27,7 +27,6 @@ p.align-sentace.card-text {
 }
 p.align-Booked.card-text {
     margin-left: 49px;
-<<<<<<< HEAD
 }
 .table-data {
     margin-top: 16px;
@@ -51,6 +50,7 @@ header.fixed nav.navbar {
 }
 input[type="text"] {
     width: 464px;
-=======
->>>>>>> f766427 (leaves component)
+}
+.table-data {
+    margin-top: 16px;
 }
