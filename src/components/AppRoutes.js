@@ -8,7 +8,7 @@ import Report from "../Pages/Report/Report";
 import Login from "../Pages/Login/Login";
 
 const AppRoutes = [
-  { key: "0", exact: true, path: "/", component: Login },
+  // { key: "0", exact: true, path: "/", component: Login },
   { key: "1", exact: true, path: "/login", component: Login },
   { key: "2", exact: true, path: "/app/dashboard", component: Dashboard },
   { key: "3", exact: true, path: "/app/department", component: Department },
