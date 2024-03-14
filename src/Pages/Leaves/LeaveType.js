@@ -18,7 +18,7 @@ const LeaveType = () => {
   };
 
   return (
-    <Card className="card-design all">
+    <Card className="card-design all mt-5">
       <div className="container">
         <div className="row claass">
           <div className="col-md-2">
