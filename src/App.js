@@ -1,27 +1,50 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import MainLayout from "./components/MainLayout";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Login from "./Pages/Login/Login.js";
+import Department from "./Pages/Department/Department";
+import LeaveType from "./Pages/Leaves/LeaveType";
+import Employee from "./Pages/Employee/Employee";
+import Salary from "./Pages/Employee/Salary";
+import Request from "./Pages/Employee/Request";
+import Report from "./Pages/Report/Report";
 
 function App() {
-  const appVersion = "v11.03.24.06";
-  console.log(appVersion, "appVersion");
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>employee-management</p>
-        <span>{appVersion}</span>
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  // Function to handle login, sets isLoggedIn to true
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  // Function to handle logout, sets isLoggedIn to false
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <Router>
+      <Routes>
+        {!isLoggedIn && <Route path="/" element={<Login onLogin={handleLogin} />} />}
+        {isLoggedIn && (
+          <Route
+            path="/"
+            element={<MainLayout />}
+          >
+            <Route path="/app/dashboard" element={<Dashboard />} />
+            <Route path="/app/department" element={<Department />} />
+          <Route path="/app/leaveType" element={<LeaveType />} />
+          <Route path="/app/employee" element={<Employee />} />
+          <Route path="/app/salary" element={<Salary />} />
+          <Route path="/app/request" element={<Request />} />
+          <Route path="/app/report" element={<Report />} />
+          </Route>
+        )}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
