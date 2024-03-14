@@ -21,12 +21,12 @@ const Sidebar = ({ itemClickHandler }) => {
         >
           <li>
             <Link
-              to="/"
+              to="/app/dashboard"
               className="nav-link px-0 align-middle"
-              onClick={() => {
-                setActive(0);
-                itemClickHandler("Dashboard");
-              }}
+              // onClick={() => {
+              //   setActive(0);
+              //   itemClickHandler("Dashboard");
+              // }}
               style={{
                 backgroundColor: active === 0 ? "#429def" : "",
                 width: "10vw",
@@ -45,10 +45,10 @@ const Sidebar = ({ itemClickHandler }) => {
             <Link
               to="/app/department"
               className="nav-link px-0 align-middle"
-              onClick={() => {
-                setActive(1);
-                itemClickHandler("Department");
-              }}
+              // onClick={() => {
+              //   setActive(1);
+              //   itemClickHandler("Department");
+              // }}
               style={{
                 backgroundColor: active === 1 ? "#429def" : "",
                 width: "10vw",
@@ -67,10 +67,10 @@ const Sidebar = ({ itemClickHandler }) => {
             <Link
               to="/app/leaveType"
               className="nav-link px-0 align-middle"
-              onClick={() => {
-                setActive(2);
-                itemClickHandler("Leave Type");
-              }}
+              // onClick={() => {
+              //   setActive(2);
+              //   itemClickHandler("Leave Type");
+              // }}
               style={{
                 backgroundColor: active === 2 ? "#429def" : "",
                 width: "10vw",
@@ -89,10 +89,10 @@ const Sidebar = ({ itemClickHandler }) => {
             <Link
               to="/app/employee"
               className="nav-link px-0 align-middle"
-              onClick={() => {
-                setActive(3);
-                itemClickHandler("Employee");
-              }}
+              // onClick={() => {
+              //   setActive(3);
+              //   itemClickHandler("Employee");
+              // }}
               style={{
                 backgroundColor: active === 3 ? "#429def" : "",
                 width: "10vw",
@@ -111,10 +111,10 @@ const Sidebar = ({ itemClickHandler }) => {
             <Link
               to="/app/salary"
               className="nav-link px-0 align-middle"
-              onClick={() => {
-                setActive(4);
-                itemClickHandler("Salary");
-              }}
+              // onClick={() => {
+              //   setActive(4);
+              //   itemClickHandler("Salary");
+              // }}
               style={{
                 backgroundColor: active === 4 ? "#429def" : "",
                 width: "10vw",
@@ -131,10 +131,10 @@ const Sidebar = ({ itemClickHandler }) => {
             <Link
               to="/app/request"
               className="nav-link px-0 align-middle"
-              onClick={() => {
-                setActive(5);
-                itemClickHandler("Leave Request");
-              }}
+              // onClick={() => {
+              //   setActive(5);
+              //   itemClickHandler("Leave Request");
+              // }}
               style={{
                 backgroundColor: active === 5 ? "#429def" : "",
                 width: "10vw",
@@ -153,10 +153,10 @@ const Sidebar = ({ itemClickHandler }) => {
             <Link
               to="/app/report"
               className="nav-link px-0 align-middle"
-              onClick={() => {
-                setActive(6);
-                itemClickHandler("Report");
-              }}
+              // onClick={() => {
+              //   setActive(6);
+              //   itemClickHandler("Report");
+              // }}
               style={{
                 backgroundColor: active === 6 ? "#429def" : "",
                 width: "10vw",
