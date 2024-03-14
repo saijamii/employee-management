@@ -4,8 +4,8 @@ import "../../App.css";
 export default function Login(props) {
   const [form, setForm] = useState(false);
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ export default function Login(props) {
     e.preventDefault();
     console.log("formData", formData);
     if (formData.email && formData.password) {
-      props.onLogin()
+      window.location.pathname = "/app/dashboard";
     }
   };
 
@@ -62,16 +62,16 @@ export default function Login(props) {
                       />
                     </div>
                     <div className="col-md-10 offset-md-5">
-                      <button
-                        type="submit"
-                        className="btn btn-primary"
-                      >
+                      <button type="submit" className="btn btn-primary">
                         Sign In
                       </button>
                     </div>
                   </form>
                   <div className="mt-5">
-                    <h6 className="col-md-8 offset-md-2"> Don't have an account?{" "}<span
+                    <h6 className="col-md-8 offset-md-2">
+                      {" "}
+                      Don't have an account?{" "}
+                      <span
                         style={{
                           color: "blue",
                           cursor: "pointer",
@@ -80,7 +80,8 @@ export default function Login(props) {
                         onClick={() => setForm(true)}
                       >
                         Sign up
-                      </span></h6>                  
+                      </span>
+                    </h6>
                   </div>
                 </div>
               </div>
@@ -92,15 +93,15 @@ export default function Login(props) {
           <div className="row justify-content-center">
             <div className="col-md-4">
               <div className="card" style={{ height: "450px" }}>
-              <h3 className="mt-2 text-center">Sign Up</h3>
+                <h3 className="mt-2 text-center">Sign Up</h3>
                 <div className="card-body">
-                <form>
-                <div className="form-group">
+                  <form>
+                    <div className="form-group">
                       <label htmlFor="name">Name</label>
                       <input
                         type="text"
                         className="form-control"
-                        id="name"                        
+                        id="name"
                         placeholder="Enter Name"
                       />
                     </div>
@@ -128,16 +129,16 @@ export default function Login(props) {
                       />
                     </div>
                     <div className="col-md-10 offset-md-5">
-                      <button
-                        type="submit"
-                        className="btn btn-primary"
-                      >
+                      <button type="submit" className="btn btn-primary">
                         Sign UP
                       </button>
                     </div>
                   </form>
                   <div className="mt-5">
-                    <h6 className="col-md-8 offset-md-2"> Already have an account?{" "}<span
+                    <h6 className="col-md-8 offset-md-2">
+                      {" "}
+                      Already have an account?{" "}
+                      <span
                         style={{
                           color: "blue",
                           cursor: "pointer",
@@ -146,8 +147,9 @@ export default function Login(props) {
                         onClick={() => setForm(false)}
                       >
                         Sign In
-                      </span></h6>                  
-                  </div>                
+                      </span>
+                    </h6>
+                  </div>
                 </div>
               </div>
             </div>
