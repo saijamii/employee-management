@@ -50,8 +50,20 @@ const Department = () => {
   return (
     <>
       <Row >
-        <Col span={20}>
+      <Col span={24}>
+          <Row style={{marginTop:'20px'}}>
+            <Col span={5} offset={1}>
+              <h4>Department Details</h4>
+            </Col>
+            <Col span={2}  offset={14}>
+              <Button type="primary">Add</Button>
+            </Col>
+          </Row>
+          <Row style={{marginTop:'20px'}}>
+          <Col span={24}>
           <Table columns={columns} dataSource={data} pagination={false} />
+          </Col>
+          </Row>
         </Col>
       </Row>
       <Modal
