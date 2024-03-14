@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table, Row, Col, Modal, Input, Select, Form,Button } from "antd";
+import { Table, Row, Col, Modal, Input, Select, Form, Button } from "antd";
 const { Option } = Select;
 
 const Employee = () => {
@@ -11,46 +11,46 @@ const Employee = () => {
       key: "id",
     },
     {
-        title: "Profile",
-        dataIndex: "profile",
-        key: "profile",
-      },
+      title: "Profile",
+      dataIndex: "profile",
+      key: "profile",
+    },
     {
-        title: "Name",
-        dataIndex: "name",
-        key: "name",
-      },
-      {
-        title: "Department",
-        dataIndex: "department",
-        key: "department",
-      },
-      {
-        title: "Email",
-        dataIndex: "email",
-        key: "email",
-      },
-      {
-        title: "Mobile",
-        dataIndex: "mobile",
-        key: "mobile",
-      },
-      {
-        title: "DOB",
-        dataIndex: "dob",
-        key: "dob",
-      },
-      {
-        title: "DOJ",
-        dataIndex: "doj",
-        key: "doj",
-      },      
-      {
-        title: "Address",
-        dataIndex: "adress",
-        key: "adress",
-      },
-      
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Department",
+      dataIndex: "department",
+      key: "department",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Mobile",
+      dataIndex: "mobile",
+      key: "mobile",
+    },
+    {
+      title: "DOB",
+      dataIndex: "dob",
+      key: "dob",
+    },
+    {
+      title: "DOJ",
+      dataIndex: "doj",
+      key: "doj",
+    },
+    {
+      title: "Address",
+      dataIndex: "adress",
+      key: "adress",
+    },
+
     {
       width: "10%",
       title: "Action",
@@ -58,7 +58,10 @@ const Employee = () => {
       render: () => {
         return (
           <>
-            <span style={{ color: "blue",cursor:'pointer' }} onClick={openModal}>
+            <span
+              style={{ color: "blue", cursor: "pointer" }}
+              onClick={openModal}
+            >
               Edit
             </span>
             &nbsp;&nbsp;
@@ -90,9 +93,21 @@ const Employee = () => {
   };
   return (
     <>
-      <Row >
-        <Col span={20}>
+      <Row>
+        <Col span={24}>
+          <Row style={{marginTop:'20px'}}>
+            <Col span={5} offset={1}>
+              <h4>Employee Details</h4>
+            </Col>
+            <Col span={2}  offset={14}>
+              <Button type="primary">Add</Button>
+            </Col>
+          </Row>
+          <Row style={{marginTop:'20px'}}>
+          <Col span={24}>
           <Table columns={columns} dataSource={data} pagination={false} />
+          </Col>
+          </Row>
         </Col>
       </Row>
       <Modal
@@ -102,7 +117,7 @@ const Employee = () => {
         onCancel={cancelModal}
         footer={null}
       >
-        <Form name="basic">          
+        <Form name="basic">
           <span style={{ fontSize: "10px" }}>Employee Id</span>
           <Form.Item
             name="department"
@@ -113,7 +128,7 @@ const Employee = () => {
               },
             ]}
           >
-            <Input placeholder="Enter Id"/>
+            <Input placeholder="Enter Id" />
           </Form.Item>
           <span style={{ fontSize: "10px" }}>Employee Name</span>
           <Form.Item
@@ -125,8 +140,7 @@ const Employee = () => {
               },
             ]}
           >
-            <Input placeholder="Enter Name"/>
-
+            <Input placeholder="Enter Name" />
           </Form.Item>
           <span style={{ fontSize: "10px" }}>Department</span>
           <Form.Item
@@ -140,7 +154,7 @@ const Employee = () => {
           >
             <Select
               placeholder="Please Select Department"
-              style={{ width: "100%", height: "40px" }}             
+              style={{ width: "100%", height: "40px" }}
             >
               <Option>EEE</Option>
               <Option>ECE</Option>
@@ -157,7 +171,7 @@ const Employee = () => {
               },
             ]}
           >
-            <Input placeholder="Enter Email"/>
+            <Input placeholder="Enter Email" />
           </Form.Item>
           <span style={{ fontSize: "10px" }}>Phone Number</span>
           <Form.Item
@@ -169,7 +183,7 @@ const Employee = () => {
               },
             ]}
           >
-            <Input placeholder="Enter Phone Number"/>
+            <Input placeholder="Enter Phone Number" />
           </Form.Item>
           <span style={{ fontSize: "10px" }}>Date of Birth</span>
           <Form.Item
@@ -181,8 +195,7 @@ const Employee = () => {
               },
             ]}
           >
-            <Input placeholder="Enter "/>
-
+            <Input placeholder="Enter " />
           </Form.Item>
           <span style={{ fontSize: "10px" }}>Date of Joining</span>
           <Form.Item
@@ -194,8 +207,7 @@ const Employee = () => {
               },
             ]}
           >
-            <Input placeholder="Enter"/>
-
+            <Input placeholder="Enter" />
           </Form.Item>
           <span style={{ fontSize: "10px" }}>Address</span>
           <Form.Item
@@ -207,8 +219,7 @@ const Employee = () => {
               },
             ]}
           >
-            <Input placeholder="Enter Address"/>
-
+            <Input placeholder="Enter Address" />
           </Form.Item>
           <Form.Item>
             <Row justify={"end"} gutter={[20, 20]}>
