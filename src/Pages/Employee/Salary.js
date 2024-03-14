@@ -1,95 +1,164 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import { Row, Col, Table } from "antd";
 
 const Salary = () => {
-    useEffect(() => {
-        document.documentElement.classList.add("salary");
-        return () => {
-            document.documentElement.classList.remove("salary");
-        };
-    }, []);
+  useEffect(() => {
+    document.title = "salary";
+  }, []);
 
-    return (
-        <div className="container">
-            <h1>Salary</h1>
-            <div className="table-responsive">
-                <table className="table table-bordered table-striped">
-                    <thead>
-                        <tr>
-                            <th className="text-nowrap">Employee ID</th>
-                            <th className="text-nowrap">BASIC</th>
-                            <th className="text-nowrap">HRA</th>
-                            <th className="text-nowrap">CONVEYANCE ALLOWANCE</th>
-                            <th className="text-nowrap">SPECIAL ALLOWANCE</th>
-                            <th className="text-nowrap">EDUCATION ALLOWANCE</th>
-                            <th className="text-nowrap">PROFESSIONAL TAX</th>
-                            <th className="text-nowrap">MEDICAL ALLOWANCE</th>
-                            <th className="text-nowrap">MONTH</th>
-                            <th className="text-nowrap">YEAR</th>
-                            <th className="text-nowrap">GROUP INSURANCE</th>
-                            <th className="text-nowrap">INCOME TAX</th>
-                            <th className="text-nowrap">PROVIDENT FUND</th>
-                            <th className="text-nowrap">GROSS</th>
-                            <th className="text-nowrap">NET PAY</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="text-nowrap">1</td>
-                            <td className="text-nowrap">10000</td>
-                            <td className="text-nowrap">2000</td>
-                            <td className="text-nowrap">500</td>
-                            <td className="text-nowrap">1000</td>
-                            <td className="text-nowrap">00</td>
-                            <td className="text-nowrap">200</td>
-                            <td className="text-nowrap">300</td>
-                            <td className="text-nowrap">January</td>
-                            <td className="text-nowrap">2024</td>
-                            <td className="text-nowrap">1000</td>
-                            <td className="text-nowrap">500</td>
-                            <td className="text-nowrap">800</td>
-                            <td className="text-nowrap">14000</td>
-                            <td className="text-nowrap">12000</td>
-                        </tr>
-                        <tr>
-                            <td className="text-nowrap">2</td>
-                            <td className="text-nowrap">10000</td>
-                            <td className="text-nowrap">2000</td>
-                            <td className="text-nowrap">500</td>
-                            <td className="text-nowrap">1000</td>
-                            <td className="text-nowrap">00</td>
-                            <td className="text-nowrap">200</td>
-                            <td className="text-nowrap">300</td>
-                            <td className="text-nowrap">January</td>
-                            <td className="text-nowrap">2024</td>
-                            <td className="text-nowrap">1000</td>
-                            <td className="text-nowrap">500</td>
-                            <td className="text-nowrap">800</td>
-                            <td className="text-nowrap">14000</td>
-                            <td className="text-nowrap">12000</td>
-                        </tr>
-                        <tr>
-                            <td className="text-nowrap">3</td>
-                            <td className="text-nowrap">10000</td>
-                            <td className="text-nowrap">2000</td>
-                            <td className="text-nowrap">500</td>
-                            <td className="text-nowrap">1000</td>
-                            <td className="text-nowrap">00</td>
-                            <td className="text-nowrap">200</td>
-                            <td className="text-nowrap">300</td>
-                            <td className="text-nowrap">January</td>
-                            <td className="text-nowrap">2024</td>
-                            <td className="text-nowrap">1000</td>
-                            <td className="text-nowrap">500</td>
-                            <td className="text-nowrap">800</td>
-                            <td className="text-nowrap">14000</td>
-                            <td className="text-nowrap">12000</td>
-                        </tr>
-                        {/* Add more rows here as needed */}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    );
-}
+  const dataSource = [
+    {
+      key: "1",
+      employeeId: "1",
+      basic: "10000",
+      hra: "2000",
+      conveyanceAllowance: "500",
+      specialAllowance: "1000",
+      educationAllowance: "00",
+      professionalTax: "200",
+      medicalAllowance: "300",
+      month: "January",
+      year: "2024",
+      groupInsurance: "1000",
+      incomeTax: "500",
+      providentFund: "800",
+      gross: "14000",
+      netPay: "12000",
+    },
+    {
+      key: "2",
+      employeeId: "2",
+      basic: "10000",
+      hra: "2000",
+      conveyanceAllowance: "500",
+      specialAllowance: "1000",
+      educationAllowance: "00",
+      professionalTax: "200",
+      medicalAllowance: "300",
+      month: "January",
+      year: "2024",
+      groupInsurance: "1000",
+      incomeTax: "500",
+      providentFund: "800",
+      gross: "14000",
+      netPay: "12000",
+    },
+  ];
+
+  const columns = [
+    {
+      title: "Employee ID",
+      dataIndex: "employeeId",
+      key: "employeeId",
+      width: 250,
+    },
+    {
+      title: "BASIC",
+      dataIndex: "basic",
+      key: "basic",
+      width: 250,
+    },
+    {
+      title: "HRA",
+      dataIndex: "hra",
+      key: "hra",
+      width: 250,
+    },
+    {
+      title: "CONVEYANCE ALLOWANCE",
+      dataIndex: "conveyanceAllowance",
+      key: "conveyanceAllowance",
+      width: 250,
+    },
+    {
+      title: "SPECIAL ALLOWANCE",
+      dataIndex: "specialAllowance",
+      key: "specialAllowance",
+      width: 250,
+    },
+    {
+      title: "EDUCATION ALLOWANCE",
+      dataIndex: "educationAllowance",
+      key: "educationAllowance",
+      width: 250,
+    },
+    {
+      title: "PROFESSIONAL TAX",
+      dataIndex: "professionalTax",
+      key: "professionalTax",
+      width: 250,
+    },
+    {
+      title: "MEDICAL ALLOWANCE",
+      dataIndex: "medicalAllowance",
+      key: "medicalAllowance",
+      width: 250,
+    },
+    {
+      title: "MONTH",
+      dataIndex: "month",
+      key: "month",
+      width: 250,
+    },
+    {
+      title: "YEAR",
+      dataIndex: "year",
+      key: "year",
+      width: 250,
+    },
+    {
+      title: "GROUP INSURANCE",
+      dataIndex: "groupInsurance",
+      key: "groupInsurance",
+      width: 250,
+    },
+    {
+      title: "INCOME TAX",
+      dataIndex: "incomeTax",
+      key: "incomeTax",
+      width: 250,
+    },
+    {
+      title: "PROVIDENT FUND",
+      dataIndex: "providentFund",
+      key: "providentFund",
+      width: 250,
+    },
+    {
+      title: "GROSS",
+      dataIndex: "gross",
+      key: "gross",
+      width: 250,
+    },
+    {
+      title: "NET PAY",
+      dataIndex: "netPay",
+      key: "netPay",
+      width: 250,
+    },
+  ];
+
+  return (
+    <div>
+      <Row>
+        <h1>Salary</h1>
+      </Row>
+
+      <Row>
+        <Col span={24}>
+          <Table
+            dataSource={dataSource}
+            columns={columns}
+            bordered
+            pagination={false}
+            scroll={{ y: "80vh", x: "180vh" }}
+            sortDirections={["ascend", "descend" || "descend", "ascend"]}
+            sticky={true}
+          />
+        </Col>
+      </Row>
+    </div>
+  );
+};
 
 export default Salary;
