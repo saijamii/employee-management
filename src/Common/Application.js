@@ -9,7 +9,7 @@ import Salary from "../Pages/Employee/Salary";
 import Request from "../Pages/Employee/Request";
 import Report from "../Pages/Report/Report";
 import SiderMenu from "../SiderMenu";
-import CommonHeader from "../CommonHeader";
+import CommonHeader from "./CommonHeader";
 const { Content, Header } = Layout;
 
 function Application() {
