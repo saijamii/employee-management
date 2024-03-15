@@ -1,32 +1,10 @@
 import React, { useState } from "react";
-import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
 import { Layout, Menu } from "antd";
+import { Link } from "react-router-dom";
+import AppRoutes from "./components/AppRoutes";
 const { Sider } = Layout;
 function SiderMenu() {
   const [collapsed, setCollapsed] = useState(false);
-  const items = [
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    BarChartOutlined,
-    CloudOutlined,
-    AppstoreOutlined,
-    TeamOutlined,
-    ShopOutlined,
-  ].map((icon, index) => ({
-    key: String(index + 1),
-    icon: React.createElement(icon),
-    label: `nav ${index + 1}`,
-  }));
   return (
     <Sider
       collapsible
@@ -44,9 +22,17 @@ function SiderMenu() {
         }}
         theme="dark"
         defaultSelectedKeys={["1"]}
-        mode="inline"
-        items={items}
-      />
+      >
+        {AppRoutes?.map(
+          (item) =>
+            item.title && (
+              <Menu.Item key={item.key} icon={item.icon}>
+                <span>{item.title}</span>
+                <Link to={item.path} />
+              </Menu.Item>
+            )
+        )}
+      </Menu>
     </Sider>
   );
 }
