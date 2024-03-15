@@ -51,7 +51,7 @@ function Application() {
         </Header>
         <Content className="mainlayout">
           <div className="app-div">
-            <Layout style={{ minHeight: "100vh", overflowX: "hidden" }}>
+            <Layout style={{ minHeight: "90vh", overflowX: "hidden" }}>
               <Routes>
                 <Route path="/app/dashboard" element={<Dashboard />} />
                 <Route path="/app/department" element={<Department />} />
