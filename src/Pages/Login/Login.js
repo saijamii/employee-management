@@ -30,7 +30,7 @@ function Login() {
       <Col>
         {signup ? (
           <Row justify="center" align="middle" className="login-container">
-            <Col xxl={12} xl={12} lg={16} md={14} sm={14} xs={24}>
+            <Col span={24}>
               <Card
                 className="login-card"
                 style={{
@@ -172,7 +172,7 @@ function Login() {
           </Row>
         ) : (
           <Row justify="center" align="middle" className="login-container">
-            <Col xxl={12} xl={12} lg={16} md={14} sm={14} xs={24}>
+            <Col span={24}>
               <Card
                 className="login-card"
                 style={{
