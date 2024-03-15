@@ -55,7 +55,11 @@ function Application() {
                 {AppRoutes?.map(
                   (item) =>
                     item.title && (
-                      <Route path={item.path} element={<item.component />} />
+                      <Route
+                        path={item.path}
+                        key={item.key}
+                        element={<item.component />}
+                      />
                     )
                 )}
               </Routes>
