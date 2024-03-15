@@ -102,6 +102,7 @@ function Login() {
                     >
                       <Input
                         className="form-input"
+                        autoComplete="on"
                         placeholder="Please Enter Your Email"
                         prefix={
                           <MailOutlined className="site-form-item-icon" />
@@ -155,7 +156,7 @@ function Login() {
                         style={{
                           cursor: "pointer",
                           color: "#4f46e5",
-                          width: "100%"
+                          width: "100%",
                         }}
                         onClick={() => {
                           formSignIn.resetFields();
@@ -221,6 +222,7 @@ function Login() {
                       prefix={<LockOutlined className="site-form-item-icon" />}
                       type="password"
                       placeholder="Password"
+                      autoComplete="on"
                     />
                   </Form.Item>
                   <Form.Item>
