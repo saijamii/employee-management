@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import Application from "./Common/Application";
-import Login from "./Pages/Login/Login";
+import Application from "./Application";
+import Login from "../Pages/Login/Login";
 
 export default function Authenticated() {
   console.log("Authenticated");
