@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./Pages/Dashboard/Dashboard";
-import Department from "./Pages/Department/Department";
-import LeaveType from "./Pages/Leaves/LeaveType";
-import Employee from "./Pages/Employee/Employee";
-import Salary from "./Pages/Employee/Salary";
-import Request from "./Pages/Employee/Request";
-import Report from "./Pages/Report/Report";
-import SiderMenu from "./SiderMenu";
-import CommonHeader from "./CommonHeader";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Department from "../Pages/Department/Department";
+import LeaveType from "../Pages/Leaves/LeaveType";
+import Employee from "../Pages/Employee/Employee";
+import Salary from "../Pages/Employee/Salary";
+import Request from "../Pages/Employee/Request";
+import Report from "../Pages/Report/Report";
+import SiderMenu from "../SiderMenu";
+import CommonHeader from "../CommonHeader";
 const { Content, Header } = Layout;
 
 function Application() {
