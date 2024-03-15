@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import AppRoutes from "./Config/AppRoutes";
 import appConfig from "./Config/AppConfig";
 const { Sider } = Layout;
-function SiderMenu({ siderOpened, siderClosed, menuVisible, onMenuItemClick }) {
+function SiderMenu({ siderClosed, onMenuItemClick }) {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
   const handleClick = (itemName) => {
@@ -22,7 +22,7 @@ function SiderMenu({ siderOpened, siderClosed, menuVisible, onMenuItemClick }) {
       <div className="demo-logo-vertical" />
       <Menu
         style={{
-          marginTop: "60px",
+          marginTop: "45px",
           position: "fixed",
           width: collapsed ? "80px" : "200px",
         }}
