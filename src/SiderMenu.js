@@ -37,7 +37,11 @@ function SiderMenu() {
     >
       <div className="demo-logo-vertical" />
       <Menu
-        style={{ marginTop: "60px", position: "fixed", width: "200px" }}
+        style={{
+          marginTop: "60px",
+          position: "fixed",
+          width: collapsed ? "auto" : "200px",
+        }}
         theme="dark"
         defaultSelectedKeys={["1"]}
         mode="inline"
