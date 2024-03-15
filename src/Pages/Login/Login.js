@@ -155,6 +155,7 @@ function Login() {
                         style={{
                           cursor: "pointer",
                           color: "#4f46e5",
+                          width: "100%"
                         }}
                         onClick={() => {
                           formSignIn.resetFields();
