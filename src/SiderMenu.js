@@ -4,9 +4,13 @@ import { Link, useLocation } from "react-router-dom";
 import AppRoutes from "./Config/AppRoutes";
 import appConfig from "./Config/AppConfig";
 const { Sider } = Layout;
-function SiderMenu() {
+function SiderMenu({ siderOpened, siderClosed, menuVisible, onMenuItemClick }) {
   const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
+  const handleClick = (itemName) => {
+    onMenuItemClick(itemName);
+    siderClosed();
+  };
   return (
     <Sider
       collapsible
@@ -30,8 +34,8 @@ function SiderMenu() {
         {AppRoutes?.map(
           (item) =>
             item.title && (
-              <Menu.Item key={item.key} icon={item.icon}>
-                <span>{item.title}</span>
+              <Menu.Item key={item.key} icon={item.icon} onClick={() => handleClick(item.title)}>
+                <span onClick={siderClosed}>{item.title}</span>
                 <Link to={item.path} />
               </Menu.Item>
             )

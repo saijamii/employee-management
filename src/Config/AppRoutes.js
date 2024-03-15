@@ -6,6 +6,14 @@ import LeaveType from "../Pages/Leaves/LeaveType";
 import Request from "../Pages/Employee/Request";
 import Report from "../Pages/Report/Report";
 import Login from "../Pages/Login/Login";
+import {
+  AppstoreFilled,
+  DollarOutlined,
+  MedicineBoxFilled, 
+} from "@ant-design/icons";
+import { FaUser } from "react-icons/fa";
+import { FcDepartment } from "react-icons/fc";
+import { BiSolidReport,BiMeh } from "react-icons/bi";
 
 const AppRoutes = [
   { key: "1", exact: true, path: "/login", component: Login },
@@ -15,6 +23,7 @@ const AppRoutes = [
     path: "/app/dashboard",
     component: Dashboard,
     title: "Dashboard",
+    icon:<AppstoreFilled />
   },
   {
     key: "3",
@@ -22,6 +31,7 @@ const AppRoutes = [
     path: "/app/department",
     component: Department,
     title: "Department",
+    icon:<FcDepartment />
   },
   {
     key: "4",
@@ -29,6 +39,7 @@ const AppRoutes = [
     path: "/app/leaveType",
     component: LeaveType,
     title: "LeaveType",
+    icon:<MedicineBoxFilled />
   },
   {
     key: "5",
@@ -36,6 +47,7 @@ const AppRoutes = [
     path: "/app/employee",
     component: Employee,
     title: "Employee",
+    icon:<FaUser />
   },
   {
     key: "6",
@@ -43,6 +55,7 @@ const AppRoutes = [
     path: "/app/salary",
     component: Salary,
     title: "Salary",
+    icon:<DollarOutlined />
   },
   {
     key: "7",
@@ -50,6 +63,7 @@ const AppRoutes = [
     path: "/app/request",
     component: Request,
     title: "Request",
+    icon:<BiMeh />
   },
   {
     key: "8",
@@ -57,6 +71,7 @@ const AppRoutes = [
     path: "/app/report",
     component: Report,
     title: "Report",
+    icon:<BiSolidReport />
   },
 ];
 

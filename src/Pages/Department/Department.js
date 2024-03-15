@@ -54,7 +54,7 @@ const Department = () => {
     <>
       <Row>
         <Col span={24}>
-          <Row style={{ marginTop: "20px" }}>
+          <Row style={{ marginTop: "10vh" }}>
             <Col span={5} offset={1}>
               <h4>Department Details</h4>
             </Col>

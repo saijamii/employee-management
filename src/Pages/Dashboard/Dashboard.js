@@ -3,7 +3,7 @@ import styles from "../Dashboard/Dashboard.module.css";
 
 const Dashboard = () => {
   return (
-    <div className="container-fluid" style={{ marginTop: "7%" }}>
+    <div className="container-fluid" style={{ marginTop: "6%"}}>
       <div className="row">
         <div className="col-4">
           <div className={`${styles.cardStyle} card`}>
