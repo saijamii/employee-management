@@ -33,7 +33,7 @@ function SiderMenu() {
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
       breakpoint="lg"
-      collapsedWidth="0"
+      // collapsedWidth="0"
     >
       <div className="demo-logo-vertical" />
       <Menu
