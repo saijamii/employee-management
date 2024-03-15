@@ -6,7 +6,7 @@ export default function CommonHeader() {
   return (
     <>
       <div className="logo" />
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+      <Menu theme="dark" mode="horizontal">
         <Menu.Item key="1">
           <Link to="/">
             <span>Home</span>
