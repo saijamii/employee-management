@@ -79,3 +79,18 @@
   box-shadow: none;
   border-color: #0b5ed7;
 }
+
+.mainlayout {
+  margin: 20px;
+  overflow: initial;
+  padding-top: 0px;
+  @media (min-width: 375px) and (max-width: 576px) {
+    margin-bottom: 20vw !important;
+  }
+  @media (min-width: 576px) and (max-width: 768px) {
+    margin-bottom: 10vw !important;
+  }
+  @media (min-width: 768px) and (max-width: 1200px) {
+    margin-bottom: 8vw !important;
+  }
+}
