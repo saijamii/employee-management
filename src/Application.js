@@ -23,14 +23,14 @@ function Application() {
   };
 
   return (
-    <Layout hasSider className="fullsitelayout">
+    <Layout hasSider>
       <SiderMenu
         className="show-on-desktop"
         siderOpened={siderOpened}
         siderClosed={siderClosed}
         menuVisable={menuVisable}
       />
-      <Layout className="sitecontentlayout">
+      <Layout>
         <Header className="app-hed topheight">
           <CommonHeader
             siderOpened={siderOpened}
@@ -40,7 +40,7 @@ function Application() {
         </Header>
         <Content className="mainlayout">
           <div className="app-div">
-            <Layout>
+            <Layout style={{ minHeight: "100vh", overflowX: "hidden" }}>
               <Routes>
                 <Route path="/app/dashboard" element={<Dashboard />} />
                 <Route path="/app/department" element={<Department />} />
