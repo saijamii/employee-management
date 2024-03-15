@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table, Row, Col, Modal, Input, Select, Form,Button } from "antd";
+import { Table, Row, Col, Modal, Select, Form, Button } from "antd";
 const { Option } = Select;
 
 const Department = () => {
@@ -17,7 +17,10 @@ const Department = () => {
       render: () => {
         return (
           <>
-            <span style={{ color: "blue",cursor:'pointer' }} onClick={openModal}>
+            <span
+              style={{ color: "blue", cursor: "pointer" }}
+              onClick={openModal}
+            >
               Edit
             </span>
             &nbsp;&nbsp;
@@ -49,20 +52,20 @@ const Department = () => {
   };
   return (
     <>
-      <Row >
-      <Col span={24}>
-          <Row style={{marginTop:'20px'}}>
+      <Row>
+        <Col span={24}>
+          <Row style={{ marginTop: "20px" }}>
             <Col span={5} offset={1}>
               <h4>Department Details</h4>
             </Col>
-            <Col span={2}  offset={14}>
+            <Col span={2} offset={14}>
               <Button type="primary">Add</Button>
             </Col>
           </Row>
-          <Row style={{marginTop:'20px'}}>
-          <Col span={24}>
-          <Table columns={columns} dataSource={data} pagination={false} />
-          </Col>
+          <Row style={{ marginTop: "20px" }}>
+            <Col span={24}>
+              <Table columns={columns} dataSource={data} pagination={false} />
+            </Col>
           </Row>
         </Col>
       </Row>
@@ -73,7 +76,7 @@ const Department = () => {
         onCancel={cancelModal}
         footer={null}
       >
-        <Form name="basic">          
+        <Form name="basic">
           <span style={{ fontSize: "10px" }}>Select Department</span>
           <Form.Item
             name="department"
@@ -86,7 +89,7 @@ const Department = () => {
           >
             <Select
               placeholder="Please Select Department"
-              style={{ width: "100%", height: "40px" }}             
+              style={{ width: "100%", height: "40px" }}
             >
               <Option>EEE</Option>
               <Option>ECE</Option>
