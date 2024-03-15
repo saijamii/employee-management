@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
 import AppRoutes from "./Config/AppRoutes";
+import appConfig from "./Config/AppConfig";
 const { Sider } = Layout;
 function SiderMenu() {
   const [collapsed, setCollapsed] = useState(false);
@@ -31,6 +32,11 @@ function SiderMenu() {
                 <Link to={item.path} />
               </Menu.Item>
             )
+        )}
+        {!collapsed && (
+          <div className="siderVersion">
+            <b>{appConfig.appVersion}</b>
+          </div>
         )}
       </Menu>
     </Sider>
