@@ -31,7 +31,10 @@ function Application() {
         menuVisable={menuVisable}
       />
       <Layout>
-        <Header className="app-hed topheight">
+        <Header
+          className="app-hed topheight"
+          style={{ position: "fixed", width: "100%" }}
+        >
           <CommonHeader
             siderOpened={siderOpened}
             siderClosed={siderClosed}
