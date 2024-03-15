@@ -33,7 +33,7 @@ function Application() {
       <Layout>
         <Header
           className="app-hed topheight"
-          style={{ position: "fixed", width: "100%" }}
+          style={{ position: "fixed", width: "100%", zIndex: "1" }}
         >
           <CommonHeader
             siderOpened={siderOpened}
