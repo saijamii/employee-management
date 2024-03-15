@@ -24,7 +24,7 @@ function SiderMenu({ siderOpened, siderClosed, menuVisible, onMenuItemClick }) {
         style={{
           marginTop: "60px",
           position: "fixed",
-          width: collapsed ? "auto" : "200px",
+          width: collapsed ? "80px" : "200px",
         }}
         theme="dark"
         defaultSelectedKeys={
@@ -34,7 +34,11 @@ function SiderMenu({ siderOpened, siderClosed, menuVisible, onMenuItemClick }) {
         {AppRoutes?.map(
           (item) =>
             item.title && (
-              <Menu.Item key={item.key} icon={item.icon} onClick={() => handleClick(item.title)}>
+              <Menu.Item
+                key={item.key}
+                icon={item.icon}
+                onClick={() => handleClick(item.title)}
+              >
                 <span onClick={siderClosed}>{item.title}</span>
                 <Link to={item.path} />
               </Menu.Item>
