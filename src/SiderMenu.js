@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AppRoutes from "./Config/AppRoutes";
 import appConfig from "./Config/AppConfig";
 const { Sider } = Layout;
 function SiderMenu() {
+  const location = useLocation();
   const [collapsed, setCollapsed] = useState(false);
   return (
     <Sider
@@ -22,7 +23,9 @@ function SiderMenu() {
           width: collapsed ? "auto" : "200px",
         }}
         theme="dark"
-        defaultSelectedKeys={AppRoutes[1]?.key}
+        defaultSelectedKeys={
+          AppRoutes?.find((e) => e?.path === location.pathname)?.key || ""
+        }
       >
         {AppRoutes?.map(
           (item) =>
