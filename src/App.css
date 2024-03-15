@@ -103,3 +103,7 @@
   position: absolute;
   top: 85vh;
 }
+:where(.css-dev-only-do-not-override-1ae8k9u).ant-layout-header .ant-menu {
+  line-height: inherit;
+  background-color: white;
+}

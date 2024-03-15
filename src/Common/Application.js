@@ -10,16 +10,22 @@ import Request from "../Pages/Employee/Request";
 import Report from "../Pages/Report/Report";
 import SiderMenu from "../SiderMenu";
 import CommonHeader from "./CommonHeader";
+import "../App.css"
 const { Content, Header } = Layout;
 
 function Application() {
   const [menuVisable, setMenuVisable] = useState(false);
+  const [activeMenu, setActiveMenu] = useState("Home");
 
   const siderClosed = () => {
     setMenuVisable(false);
   };
   const siderOpened = () => {
     setMenuVisable(true);
+  };
+  const handleMenuItemClick = (menuItem) => {
+    console.log("menu",menuItem)
+    setActiveMenu(menuItem);
   };
 
   return (
@@ -29,13 +35,15 @@ function Application() {
         siderOpened={siderOpened}
         siderClosed={siderClosed}
         menuVisable={menuVisable}
+        onMenuItemClick={handleMenuItemClick}
       />
       <Layout>
         <Header
           className="app-hed topheight"
-          style={{ position: "fixed", width: "100%", zIndex: "1" }}
+          style={{ position: "fixed", width: "100%", zIndex: "1",backgroundColor:'white'}}
         >
           <CommonHeader
+            activeMenu={activeMenu}
             siderOpened={siderOpened}
             siderClosed={siderClosed}
             menuVisable={menuVisable}
