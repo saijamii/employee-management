@@ -22,7 +22,7 @@ function SiderMenu() {
           width: collapsed ? "auto" : "200px",
         }}
         theme="dark"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={AppRoutes[1]?.key}
       >
         {AppRoutes?.map(
           (item) =>
