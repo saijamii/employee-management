@@ -53,6 +53,7 @@ export default function Login(props) {
                       <label htmlFor="exampleInputPassword1">Password</label>
                       <input
                         type="password"
+                        autoComplete="on"
                         className="form-control"
                         id="exampleInputPassword1"
                         name="password"
