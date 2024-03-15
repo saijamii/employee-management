@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
-import AppRoutes from "./components/AppRoutes";
+import AppRoutes from "./Config/AppRoutes";
 const { Sider } = Layout;
 function SiderMenu() {
   const [collapsed, setCollapsed] = useState(false);
