@@ -1,162 +1,258 @@
 import React, { useState } from "react";
-import "../../App.css";
+import { Col, Row, Button, Card, Form, Input } from "antd";
+import "../../StyleSheet/login.css";
+import { LockOutlined, MailOutlined } from "@ant-design/icons";
 
-export default function Login(props) {
-  const [form, setForm] = useState(false);
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+function Login() {
+  const [formSignIn] = Form.useForm();
+  const [formSignUp] = Form.useForm();
+  const [signup, setSignUp] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("formData", formData);
-    if (formData.email && formData.password) {
+  const onFinishSignIn = async (values) => {
+    console.log(values, "values");
+    setLoading(true);
+    setTimeout(() => {
       window.location.pathname = "/app/dashboard";
-    }
+    }, 1500);
   };
 
-  const { email, password } = formData;
+  const onFinishSignUp = async (values) => {
+    console.log(values, "values");
+    setLoading(true);
+    setTimeout(() => {
+      window.location.pathname = "/app/dashboard";
+    }, 1500);
+  };
 
   return (
     <div className="login_background">
-      {form === false ? (
-        <div className="container" style={{ marginTop: "20px" }}>
-          <div className="row justify-content-center">
-            <div className="col-md-4">
-              <div className="card" style={{ height: "400px" }}>
-                <h3 className="mt-2 text-center">Login</h3>
-                <div className="card-body">
-                  <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputEmail1">Email</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="exampleInputEmail1"
-                        name="email"
-                        value={email}
-                        aria-describedby="emailHelp"
-                        placeholder="Enter email"
-                        onChange={handleChange}
+      <Col>
+        {signup ? (
+          <Row justify="center" align="middle" className="login-container">
+            <Col xxl={12} xl={12} lg={16} md={14} sm={14} xs={24}>
+              <Card
+                className="login-card"
+                style={{
+                  boxShadow: "0 4px 8px 0 rgba(0, 0, 8, 0.2)",
+                  backgroundColor: "#c7c8cc",
+                  border: "transparent",
+                }}
+              >
+                {/* <h1 className="login-title">Create account</h1> */}
+                <Form
+                  form={formSignUp}
+                  onFinish={onFinishSignUp}
+                  autoComplete="off"
+                  className="login-form"
+                >
+                  <Col>
+                    <span>
+                      First Name<span style={{ color: "red" }}>*</span>
+                    </span>
+                    <Form.Item
+                      name="firstName"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your First Name!",
+                        },
+                      ]}
+                    >
+                      <Input placeholder="First Name" className="form-input" />
+                    </Form.Item>
+                  </Col>
+
+                  <Col>
+                    <span>
+                      Last Name<span style={{ color: "red" }}>*</span>
+                    </span>
+                    <Form.Item
+                      name="lastName"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please input your Last Name!",
+                        },
+                      ]}
+                    >
+                      <Input
+                        placeholder="Input Last Name"
+                        className="form-input"
                       />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="exampleInputPassword1">Password</label>
-                      <input
-                        type="password"
-                        autoComplete="on"
-                        className="form-control"
-                        id="exampleInputPassword1"
-                        name="password"
-                        value={password}
+                    </Form.Item>
+                  </Col>
+
+                  <Col>
+                    <span>
+                      Email<span style={{ color: "red" }}>*</span>
+                    </span>
+                    <Form.Item
+                      name="userId"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Please Enter Your Email!",
+                        },
+                        {
+                          type: "email",
+                          message: "The Input Is Not Valid Email",
+                        },
+                      ]}
+                    >
+                      <Input
+                        className="form-input"
+                        placeholder="Please Enter Your Email"
+                        prefix={
+                          <MailOutlined className="site-form-item-icon" />
+                        }
+                      />
+                    </Form.Item>
+                  </Col>
+
+                  <Col>
+                    <span className="title_changes ">
+                      Password<span style={{ color: "red" }}>*</span>
+                    </span>
+
+                    <Form.Item
+                      name="password"
+                      rules={[
+                        {
+                          required: true,
+                          pattern:
+                            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%#^*?&+=_-])[A-Za-z\d$@$!%*?&]/,
+                          message:
+                            "At least one  upperCase letter, At least one number and one special character!",
+                        },
+                      ]}
+                      hasFeedback
+                    >
+                      <Input.Password
                         placeholder="Password"
-                        onChange={handleChange}
+                        autoComplete="new-password"
+                        className="form-input"
+                        prefix={
+                          <LockOutlined className="site-form-item-icon" />
+                        }
                       />
-                    </div>
-                    <div className="col-md-10 offset-md-5">
-                      <button type="submit" className="btn btn-primary">
-                        Sign In
-                      </button>
-                    </div>
-                  </form>
-                  <div className="mt-5">
-                    <h6 className="col-md-8 offset-md-2">
-                      {" "}
-                      Don't have an account?{" "}
+                    </Form.Item>
+                  </Col>
+
+                  <Form.Item>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      className="login-form-button"
+                      loading={loading}
+                    >
+                      Submit Details
+                    </Button>
+                  </Form.Item>
+                  <Col>
+                    <Row justify={"space-between"}>
                       <span
                         style={{
-                          color: "blue",
                           cursor: "pointer",
-                          fontWeight: "bold",
+                          color: "#4f46e5",
                         }}
-                        onClick={() => setForm(true)}
-                      >
-                        Sign up
-                      </span>
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="container" style={{ marginTop: "20px" }}>
-          <div className="row justify-content-center">
-            <div className="col-md-4">
-              <div className="card" style={{ height: "450px" }}>
-                <h3 className="mt-2 text-center">Sign Up</h3>
-                <div className="card-body">
-                  <form>
-                    <div className="form-group">
-                      <label htmlFor="name">Name</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        placeholder="Enter Name"
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="email1">Email</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="email"
-                        name="email"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter email"
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="password">Password</label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        id="password"
-                        name="password"
-                        placeholder="Password"
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="col-md-10 offset-md-5">
-                      <button type="submit" className="btn btn-primary">
-                        Sign UP
-                      </button>
-                    </div>
-                  </form>
-                  <div className="mt-5">
-                    <h6 className="col-md-8 offset-md-2">
-                      {" "}
-                      Already have an account?{" "}
-                      <span
-                        style={{
-                          color: "blue",
-                          cursor: "pointer",
-                          fontWeight: "bold",
+                        onClick={() => {
+                          formSignIn.resetFields();
+                          formSignUp.resetFields();
+                          setSignUp(false);
                         }}
-                        onClick={() => setForm(false)}
                       >
-                        Sign In
+                        Back to Login
                       </span>
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+                    </Row>
+                  </Col>
+                </Form>
+              </Card>
+            </Col>
+          </Row>
+        ) : (
+          <Row justify="center" align="middle" className="login-container">
+            <Col xxl={12} xl={12} lg={16} md={14} sm={14} xs={24}>
+              <Card
+                className="login-card"
+                style={{
+                  boxShadow: "0 4px 8px 0 rgba(0, 0, 8, 0.2)",
+                  backgroundColor: "#c7c8cc",
+                  border: "transparent",
+                }}
+              >
+                <h1 className="login-title">Welcome back!</h1>
+                <Form
+                  form={formSignIn}
+                  onFinish={onFinishSignIn}
+                  autoComplete="off"
+                  className="login-form"
+                >
+                  <Form.Item
+                    name="userId"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please Enter Your Email!",
+                      },
+                      {
+                        type: "email",
+                        message: "The Input Is Not Valid Email",
+                      },
+                    ]}
+                  >
+                    <Input
+                      className="form-input"
+                      placeholder="Please Enter Your Email"
+                      prefix={<MailOutlined className="site-form-item-icon" />}
+                    />
+                  </Form.Item>
+                  <Form.Item
+                    name="password"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please input your password!",
+                      },
+                    ]}
+                  >
+                    <Input
+                      prefix={<LockOutlined className="site-form-item-icon" />}
+                      type="password"
+                      placeholder="Password"
+                    />
+                  </Form.Item>
+                  <Form.Item>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      className="login-form-button"
+                      loading={loading}
+                    >
+                      Login
+                    </Button>
+                  </Form.Item>
+                  Don't have an account?{" "}
+                  <span
+                    style={{
+                      cursor: "pointer",
+                      color: "#4f46e5",
+                    }}
+                    onClick={() => {
+                      formSignIn.resetFields();
+                      setSignUp(true);
+                    }}
+                  >
+                    Signup
+                  </span>
+                </Form>
+              </Card>
+            </Col>
+          </Row>
+        )}
+      </Col>
     </div>
   );
 }
+
+export default Login;
