@@ -108,3 +108,30 @@
   line-height: inherit;
   background-color: white;
 }
+
+.add-cancel {
+  background-color: #94a3b8;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+  height: 30px;
+
+  &:hover {
+    background-color: #94a3b8;
+    color: #fff;
+    height: 30px;
+  }
+}
+
+.sav-btn {
+  background: #28589a;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.add-row {
+  justify-content: right;
+  border-radius: 10px;
+  margin-right: 10px;
+}
