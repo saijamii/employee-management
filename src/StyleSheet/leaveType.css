@@ -1,0 +1,56 @@
+.first.card-title.h5 {
+    margin-left: 49px;
+}
+
+.second.card-title.h5 {
+    margin-left: 12px;
+}
+
+.third.card-title.h5 {
+    margin-left: 23px;
+}
+
+.fourth.card-title.h5 {
+    margin-left: 29px;
+}
+
+.fifth.card-title.h5 {
+    margin-left: 61px;
+}
+
+.sixth.card-title.h5 {
+    margin-left: 40px;
+}
+
+p.align-sentace.card-text {
+    margin-left: 36px;
+}
+p.align-Booked.card-text {
+    margin-left: 49px;
+}
+.table-data {
+    margin-top: 16px;
+}
+button.btn.btn-secondary.btn-sm.dropdown-toggle {
+    left: 208px;
+    background-color: transparent;
+    color: #333;
+}
+.card-design.all.card {
+    right: 22px;
+    width: 100%;
+}
+.row.claass {
+    display: flex;
+    margin-top: 32px;
+}
+header.fixed nav.navbar {
+    position: fixed;
+    top: 15px;
+}
+input[type="text"] {
+    width: 464px;
+}
+.table-data {
+    margin-top: 16px;
+}

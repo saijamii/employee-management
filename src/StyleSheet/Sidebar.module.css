@@ -1,0 +1,12 @@
+/* Sidebar.module.css */
+.sidebar {
+    height: 97vh;
+    margin: 15px;
+    border-radius: 20px;
+    width: 13vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  
