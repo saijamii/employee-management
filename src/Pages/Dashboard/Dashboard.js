@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 import styles from "../Dashboard/Dashboard.module.css";
 
 const Dashboard = () => {
-  UseDocumentTitle(window.location.pathname);
+  useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   return (
     <div className="container-fluid" style={{ marginTop: "6%" }}>
       <div className="row">

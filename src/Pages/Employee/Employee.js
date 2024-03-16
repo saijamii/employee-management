@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Row, Col, Modal, Input, Select, Form, Button } from "antd";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 const { Option } = Select;
 
 const Employee = () => {
-  UseDocumentTitle(window.location.pathname);
+   useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   const [showModal, setShowModal] = useState("");
   const columns = [
     {

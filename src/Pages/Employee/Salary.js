@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Row, Col, Table } from "antd";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 
-const Salary = () => {
-  UseDocumentTitle(window.location.pathname);
+export default function Salary() {
+   useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   const dataSource = [
     {
       key: "1",
@@ -109,6 +111,4 @@ const Salary = () => {
       </Row>
     </div>
   );
-};
-
-export default Salary;
+}
