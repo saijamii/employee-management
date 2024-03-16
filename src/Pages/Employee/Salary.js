@@ -3,7 +3,7 @@ import { Row, Col, Table } from "antd";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 
 export default function Salary() {
-   useEffect(() => {
+  useEffect(() => {
     UseDocumentTitle(window.location.pathname);
   }, []);
   const dataSource = [
@@ -93,7 +93,7 @@ export default function Salary() {
 
   return (
     <div>
-      <Row style={{ marginTop: "6vh" }}>
+      <Row>
         <h1>Salary</h1>
       </Row>
 
