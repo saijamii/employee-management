@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Row, Col, Table } from "antd";
+import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 
 const Salary = () => {
-  useEffect(() => {
-    document.title = "salary";
-  }, []);
-
+  UseDocumentTitle(window.location.pathname);
   const dataSource = [
     {
       key: "1",
@@ -13,7 +11,7 @@ const Salary = () => {
       basic: "10000",
       hra: "2000",
       conveyanceAllowance: "500",
-      specialAllowance: "1000",     
+      specialAllowance: "1000",
       month: "January",
       year: "2024",
       incomeTax: "500",
@@ -27,7 +25,7 @@ const Salary = () => {
       basic: "10000",
       hra: "2000",
       conveyanceAllowance: "500",
-      specialAllowance: "1000",     
+      specialAllowance: "1000",
       month: "January",
       year: "2024",
       incomeTax: "500",
@@ -62,7 +60,7 @@ const Salary = () => {
       title: "SPECIAL ALLOWANCE",
       dataIndex: "specialAllowance",
       key: "specialAllowance",
-    },  
+    },
     {
       title: "MONTH",
       dataIndex: "month",
@@ -72,7 +70,7 @@ const Salary = () => {
       title: "YEAR",
       dataIndex: "year",
       key: "year",
-    }, 
+    },
     {
       title: "INCOME TAX",
       dataIndex: "incomeTax",
@@ -83,7 +81,7 @@ const Salary = () => {
       dataIndex: "providentFund",
       key: "providentFund",
     },
- 
+
     {
       title: "NET PAY",
       dataIndex: "netPay",
@@ -93,7 +91,7 @@ const Salary = () => {
 
   return (
     <div>
-      <Row style={{marginTop:'6vh'}}>
+      <Row style={{ marginTop: "6vh" }}>
         <h1>Salary</h1>
       </Row>
 
