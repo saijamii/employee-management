@@ -36,3 +36,75 @@
     transform: rotate(360deg);
   }
 }
+.login_background {
+  background-image: url("Images/bg-sign-in-basic.jpeg");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+  height: 100vh;
+  width: 100%;
+
+  /* position: relative; */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  height: 2.5rem;
+}
+
+.form-control:focus + .floating-label,
+.form-control:not(:placeholder-shown) + .floating-label {
+  font-size: 15px;
+  transform: translateY(-1.5rem);
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 1rem;
+  top: 1rem;
+  top: 0.5rem;
+  transition: 0.2s ease all;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #0b5ed7;
+}
+
+.mainlayout {
+  margin: 20px;
+  overflow: initial;
+  min-height: 95vh;
+  padding-top: 0px;
+  @media (min-width: 375px) and (max-width: 576px) {
+    margin-bottom: 20vw !important;
+  }
+  @media (min-width: 576px) and (max-width: 768px) {
+    margin-bottom: 10vw !important;
+  }
+  @media (min-width: 768px) and (max-width: 1200px) {
+    margin-bottom: 8vw !important;
+  }
+}
+.siderVersion {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: absolute;
+  top: 85vh;
+}
+:where(.css-dev-only-do-not-override-1ae8k9u).ant-layout-header .ant-menu {
+  line-height: inherit;
+  background-color: white;
+}

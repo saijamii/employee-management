@@ -1,27 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AppRoutes from "./Config/AppRoutes";
+import { AppContext } from "./Config/AppContext";
+import Authenticated from "./Common/Authenticated";
 
-function App() {
-  const appVersion = "v11.03.24.06";
-  console.log(appVersion, "appVersion");
+export default function App() {
+  const contextValue = [
+    {
+      AppRoutes: AppRoutes,
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>employee-management</p>
-        <span>{appVersion}</span>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={contextValue}>
+      <Router>
+        <Routes>
+          <Route path="*" element={<Authenticated />} />
+        </Routes>
+      </Router>
+    </AppContext.Provider>
   );
 }
-
-export default App;
