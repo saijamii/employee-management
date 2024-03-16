@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Table, Row, Col, Modal, Input, Select, Form, Button } from "antd";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 
 const Employee = () => {
-   useEffect(() => {
+  useEffect(() => {
     UseDocumentTitle(window.location.pathname);
   }, []);
   const [showModal, setShowModal] = useState("");
@@ -104,7 +105,9 @@ const Employee = () => {
               <h4>Employee Details</h4>
             </Col>
             <Col span={2} offset={14}>
-              <Button type="primary">Add</Button>
+              <Link to={"/app/addEmployee"}>
+                <Button type="primary">Add</Button>
+              </Link>
             </Col>
           </Row>
           <Row style={{ marginTop: "20px" }}>
