@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Layout } from "antd";
 import { Routes, Route } from "react-router-dom";
 import SiderMenu from "../SiderMenu";
+import AppRoutes from "../Config/AppRoutes";
+import { AppContext } from "../Config/AppContext";
 import CommonHeader from "./CommonHeader";
 import "../App.css";
-import AppRoutes from "../Config/AppRoutes";
 const { Content, Header } = Layout;
 
 function Application() {
+  const context = useContext(AppContext);
+  console.log(context, "context");
   const [menuVisable, setMenuVisable] = useState(false);
   const [activeMenu, setActiveMenu] = useState("Home");
 

@@ -1,9 +1,11 @@
 import React from "react";
+import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 import styles from "../Dashboard/Dashboard.module.css";
 
 const Dashboard = () => {
+  UseDocumentTitle(window.location.pathname);
   return (
-    <div className="container-fluid" style={{ marginTop: "6%"}}>
+    <div className="container-fluid" style={{ marginTop: "6%" }}>
       <div className="row">
         <div className="col-4">
           <div className={`${styles.cardStyle} card`}>

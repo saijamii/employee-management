@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Table, Row, Col, Modal, Input, Select, Form, Button } from "antd";
+import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 const { Option } = Select;
 
 const Employee = () => {
+  UseDocumentTitle(window.location.pathname);
   const [showModal, setShowModal] = useState("");
   const columns = [
     {
@@ -95,21 +97,22 @@ const Employee = () => {
     <>
       <Row>
         <Col span={24}>
-          <Row style={{marginTop:'10vh'}}>
+          <Row style={{ marginTop: "10vh" }}>
             <Col span={5} offset={1}>
               <h4>Employee Details</h4>
             </Col>
-            <Col span={2}  offset={14}>
+            <Col span={2} offset={14}>
               <Button type="primary">Add</Button>
             </Col>
           </Row>
-          <Row style={{marginTop:'20px'}}>
-          <Col span={24}>
-          <Table columns={columns} dataSource={data} pagination={false} />
-          </Col>
+          <Row style={{ marginTop: "20px" }}>
+            <Col span={24}>
+              <Table columns={columns} dataSource={data} pagination={false} />
+            </Col>
           </Row>
         </Col>
       </Row>
+
       <Modal
         title="Edit Employee"
         open={showModal}
