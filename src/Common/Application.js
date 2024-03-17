@@ -21,7 +21,6 @@ function Application() {
     setMenuVisable(true);
   };
   const handleMenuItemClick = (menuItem) => {
-    console.log("menu", menuItem);
     setActiveMenu(menuItem);
   };
 

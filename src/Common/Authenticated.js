@@ -5,7 +5,6 @@ import Login from "../Pages/Login/Login";
 import WithAuth from "./WithAuth";
 
 const Authenticated = () => {
-  console.log("Authenticated");
   const location = useLocation();
 
   return (
