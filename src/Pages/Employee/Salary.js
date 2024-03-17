@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Table, Button, Modal, Form, Input, Popover } from "antd";
+import { Row, Col, Table, Button, Modal, Form, Input, Popconfirm } from "antd";
 import {
   DeleteOutlined,
-  EditOutlined,
   PlusOutlined,
   SearchOutlined,
 } from "@ant-design/icons";
-// import { AiOutlineEllipsis } from "react-icons/ai";
-import { BsListCheck } from "react-icons/bs";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -110,78 +107,34 @@ const Salary = () => {
       key: "providentFund",
       width: 210,
     },
-
     {
       title: "NET PAY",
       dataIndex: "netPay",
       key: "netPay",
       width: 210,
     },
-
     {
       title: "ACTIONS",
       width: 150,
       fixed: window.screen.width > 1024 ? "right" : "",
       render: (record) => {
         return (
-          // <Row
-          //   style={{
-          //     display: "flex",
-          //     justifyContent: "space-between",
-          //     alignItems: "center",
-          //   }}
-          // >
-          //   <div style={{ padding: "5px", fontSize: "25px" }}>
-          //     <Popover
-          //       content={
-          //         <div
-          //           style={{
-          //             display: "flex",
-          //             justifyContent: "space-around",
-          //             alignItems: "center",
-          //             flexDirection: "column",
-          //           }}
-          //         >
-          //           <Button
-          //             className="edit-btn"
-          //             style={{ marginTop: "3px" }}
-          //             icon={<EditOutlined />}
-          //             onClick={() => handleEdit(record)}
-          //           >
-          //             Edit
-          //           </Button>
-          //           <Popconfirm
-          //             placement="left"
-          //             title="Are you sure?"
-          //             okText="Yes"
-          //             cancelText="No"
-          //           >
-          //             <Button
-          //               className="delete-header-btn"
-          //               style={{ width: "100%", marginTop: "3px" }}
-          //               icon={<DeleteOutlined />}
-          //             >
-          //               Delete
-          //             </Button>
-          //           </Popconfirm>
-          //         </div>
-          //       }
-          //     >
-          //       <AiOutlineEllipsis style={{ fontSize: "30px", color: "grey" }} />
-          //     </Popover>
-          //   </div>
-          // </Row>
-
-          <>
+          <div>
             <span
-              style={{ color: "blue", cursor: "pointer" }}
+              style={{ color: "blue", cursor: "pointer", marginRight: "8px" }}
               onClick={() => handleEdit(record)}
             >
               Edit
             </span>
-            &nbsp;&nbsp;
-            <span style={{ color: "red" }}>Delete</span>
-          </>
+            <Popconfirm
+              title="Are you sure you want to delete this record?"
+              onConfirm={() => handleDelete(record.key)}
+              okText="Yes"
+              cancelText="No"
+            >
+              <span style={{ color: "red", cursor: "pointer" }}>Delete</span>
+            </Popconfirm>
+          </div>
         );
       },
     },
@@ -201,6 +154,15 @@ const Salary = () => {
     setEditModalVisible(false);
   };
 
+  const handleDelete = (key) => {
+    // Handle delete logic here
+  };
+
+  const handleAdd = (record) => {
+    setEditRecord(record);
+    setEditModalVisible(true);
+  };
+
   return (
     <div>
       <Col span={24} className="fireFox">
@@ -208,14 +170,7 @@ const Salary = () => {
           <Col span={12}>
             <div>
               <h1 style={{ fontSize: "30px" }}>.</h1>
-
-              <h1
-                style={{
-                  fontSize: "30px",
-                }}
-              >
-                Salary
-              </h1>
+              <h1 style={{ fontSize: "30px" }}>Salary</h1>
             </div>
           </Col>
         </Row>
@@ -228,6 +183,7 @@ const Salary = () => {
                   <Button
                     style={{ marginRight: "10px" }}
                     className="buttonBorder-add"
+                    onClick={handleAdd}
                   >
                     <PlusOutlined />
                     Add
@@ -264,24 +220,42 @@ const Salary = () => {
           </div>
         </Col>
       </Row>
-      <>
-        <Modal
-          maskClosable={false}
-          title="Salary"
-          open={editModalVisible}
-          footer={[
-            <Button onClick={handleCancel}>Cancel</Button>,
-            <Button key="save" type="primary" onClick={handleSave}>
-              Save
-            </Button>,
-          ]}
-        >
-          <Form form={form}>
-            {columns.map((column) => (
+
+      <Modal
+        maskClosable={false}
+        title={editRecord ? "Edit Salary" : "Add Salary"}
+        open={editModalVisible}
+        onCancel={handleCancel}
+        footer={[
+          <Button
+            style={{
+              borderRadius: "5px",
+              backgroundColor: "red",
+              color: "white",
+            }}
+            key="cancel"
+            onClick={handleCancel}
+          >
+            Cancel
+          </Button>,
+          <Button
+            style={{ borderRadius: "5px", backgroundColor: "green" }}
+            key="save"
+            type="primary"
+            onClick={handleSave}
+          >
+            Save
+          </Button>,
+        ]}
+      >
+        <Form form={form}>
+          {editRecord &&
+            columns.map((column) => (
               <Form.Item
                 key={column.dataIndex}
                 label={column.title}
                 name={column.dataIndex}
+                initialValue={editRecord[column.dataIndex]}
                 rules={[
                   { required: true, message: `${column.title} is required` },
                 ]}
@@ -289,9 +263,8 @@ const Salary = () => {
                 <Input />
               </Form.Item>
             ))}
-          </Form>
-        </Modal>
-      </>
+        </Form>
+      </Modal>
     </div>
   );
 };
