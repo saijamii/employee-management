@@ -49,11 +49,6 @@ export default function Salary() {
       key: "basic",
     },
     {
-      title: "HRA",
-      dataIndex: "hra",
-      key: "hra",
-    },
-    {
       title: "CONVEYANCE ALLOWANCE",
       dataIndex: "conveyanceAllowance",
       key: "conveyanceAllowance",
