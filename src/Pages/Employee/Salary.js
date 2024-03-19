@@ -6,10 +6,6 @@ import "aos/dist/aos.css";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 
 export default function Salary() {
-  useEffect(() => {
-    UseDocumentTitle(window.location.pathname);
-  });
-
   const [editModalVisible, setEditModalVisible] = useState(false);
   const [editRecord, setEditRecord] = useState(null);
   const [searchItem, setSearchItem] = useState("");
@@ -17,11 +13,12 @@ export default function Salary() {
   const [form] = Form.useForm();
 
   useEffect(() => {
-    document.title = "salary";
     AOS.init({
       duration: 2000,
     });
-  }, []);
+    UseDocumentTitle(window.location.pathname);
+  });
+
   const dataSource = [
     {
       key: "1",
