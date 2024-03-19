@@ -58,62 +58,52 @@ export default function Salary() {
       title: "Employee ID",
       dataIndex: "employeeId",
       key: "employeeId",
-      width: 210,
     },
     {
       title: "BASIC",
       dataIndex: "basic",
       key: "basic",
-      width: 210,
     },
     {
       title: "HRA",
       dataIndex: "hra",
       key: "hra",
-      width: 210,
     },
     {
       title: "CONVEYANCE ALLOWANCE",
       dataIndex: "conveyanceAllowance",
       key: "conveyanceAllowance",
-      width: 210,
     },
     {
       title: "SPECIAL ALLOWANCE",
       dataIndex: "specialAllowance",
       key: "specialAllowance",
-      width: 210,
     },
     {
       title: "MONTH",
       dataIndex: "month",
       key: "month",
-      width: 210,
     },
     {
       title: "YEAR",
       dataIndex: "year",
       key: "year",
-      width: 210,
     },
     {
       title: "INCOME TAX",
       dataIndex: "incomeTax",
       key: "incomeTax",
-      width: 210,
     },
     {
       title: "PROVIDENT FUND",
       dataIndex: "providentFund",
       key: "providentFund",
-      width: 210,
     },
 
     {
       title: "NET PAY",
       dataIndex: "netPay",
       key: "netPay",
-      width: 210,
     },
     {
       title: "ACTIONS",
@@ -167,64 +157,49 @@ export default function Salary() {
 
   return (
     <div>
-      <Row>
-        <h1>Salary</h1>
-      </Row>
-      <Col span={24} className="fireFox">
-        <Row justify="space-between" gutter={[16, 16]}>
-          <Col span={12}>
-            <div>
-              <h1 style={{ fontSize: "30px" }}>.</h1>
-              <h1 style={{ fontSize: "30px" }}>Salary</h1>
-            </div>
+      <Col span={24}>
+        <Row justify="space-between">
+          <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={24}>
+            <h1 style={{ fontSize: "30px" }}>Salary</h1>
+          </Col>
+          <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={24}>
+            <Row justify="end" gutter={[16, 16]}>
+              <Col>
+                <Button
+                  style={{ marginRight: "10px" }}
+                  className="buttonBorder-add"
+                  onClick={handleAdd}
+                >
+                  <PlusOutlined />
+                  Add
+                </Button>
+              </Col>
+
+              <Col xxl={10} xl={12} lg={16} md={16} sm={18} xs={20}>
+                <Input
+                  onChange={(e) => setSearchItem(e.target.value)}
+                  placeholder="Search...."
+                  prefix={<SearchOutlined className="colltable-search" />}
+                  className="collapse-btntitle"
+                  style={{ width: "100%" }}
+                />
+              </Col>
+            </Row>
           </Col>
         </Row>
-        <Col span={24}>
-          <Row justify="space-between">
-            <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={24}></Col>
-            <Col xxl={12} xl={12} lg={12} md={12} sm={12} xs={24}>
-              <Row justify="end" gutter={[16, 16]}>
-                <Col>
-                  <Button
-                    style={{ marginRight: "10px" }}
-                    className="buttonBorder-add"
-                    onClick={handleAdd}
-                  >
-                    <PlusOutlined />
-                    Add
-                  </Button>
-                </Col>
-
-                <Col xxl={10} xl={12} lg={16} md={16} sm={18} xs={20}>
-                  <Input
-                    onChange={(e) => setSearchItem(e.target.value)}
-                    placeholder="Search...."
-                    prefix={<SearchOutlined className="colltable-search" />}
-                    className="collapse-btntitle"
-                    style={{ width: "100%" }}
-                  />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Col>
       </Col>
 
-      <Row>
-        <Col span={24}>
-          <div data-aos="fade-right">
-            <Table
-              dataSource={dataSource}
-              scroll={{ y: "80vh", x: "180vh" }}
-              columns={columns}
-              bordered
-              pagination={false}
-              sortDirections={["ascend", "descend" || "descend", "ascend"]}
-              sticky={true}
-            />
-          </div>
-        </Col>
-      </Row>
+      <div data-aos="fade-right">
+        <Table
+          dataSource={dataSource}
+          scroll={{ y: "80vh", x: "180vh" }}
+          columns={columns}
+          bordered
+          pagination={false}
+          sortDirections={["ascend", "descend" || "descend", "ascend"]}
+          sticky={true}
+        />
+      </div>
 
       <Modal
         maskClosable={false}
