@@ -13,7 +13,6 @@ function SiderMenu({ siderClosed, onMenuItemClick }) {
   };
   return (
     <Sider
-    style={{background:"#e8e8e8"}}
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
@@ -27,7 +26,7 @@ function SiderMenu({ siderClosed, onMenuItemClick }) {
           position: "fixed",
           width: collapsed ? "80px" : "200px",
         }}
-        theme="whitw"
+        theme="dark"
         defaultSelectedKeys={
           AppRoutes?.find((e) => e?.path === location.pathname)?.key || ""
         }
