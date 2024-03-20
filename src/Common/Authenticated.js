@@ -2,9 +2,9 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Application from "./Application";
 import Login from "../Pages/Login/Login";
+import WithAuth from "./WithAuth";
 
-export default function Authenticated() {
-  console.log("Authenticated");
+const Authenticated = () => {
   const location = useLocation();
 
   return (
@@ -26,4 +26,6 @@ export default function Authenticated() {
       )}
     </div>
   );
-}
+};
+
+export default WithAuth(Authenticated);

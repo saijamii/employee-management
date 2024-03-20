@@ -21,7 +21,6 @@ function Application() {
     setMenuVisable(true);
   };
   const handleMenuItemClick = (menuItem) => {
-    console.log("menu", menuItem);
     setActiveMenu(menuItem);
   };
 
@@ -53,7 +52,13 @@ function Application() {
         </Header>
         <Content className="mainlayout">
           <div className="app-div">
-            <Layout style={{ minHeight: "90vh", overflowX: "hidden" }}>
+            <Layout
+              style={{
+                minHeight: "90vh",
+                overflowX: "hidden",
+                marginTop: "10vh",
+              }}
+            >
               <Routes>
                 {AppRoutes?.map(
                   (item) =>

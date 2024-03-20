@@ -4,7 +4,6 @@ import { Row,Col,Input } from "antd";
 const { Search } = Input;
 
 export default function CommonHeader({activeMenu}) {
-  console.log("activeMenu",activeMenu)
   return (
     <>
       <div className="logo" />

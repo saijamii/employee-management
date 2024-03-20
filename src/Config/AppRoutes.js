@@ -9,11 +9,12 @@ import Login from "../Pages/Login/Login";
 import {
   AppstoreFilled,
   DollarOutlined,
-  MedicineBoxFilled, 
+  MedicineBoxFilled,
 } from "@ant-design/icons";
 import { FaUser } from "react-icons/fa";
 import { FcDepartment } from "react-icons/fc";
-import { BiSolidReport,BiMeh } from "react-icons/bi";
+import { BiSolidReport, BiMeh } from "react-icons/bi";
+import AddEmployee from "../Pages/Employee/AddEmployee";
 
 const AppRoutes = [
   { key: "1", exact: true, path: "/login", component: Login },
@@ -23,7 +24,8 @@ const AppRoutes = [
     path: "/app/dashboard",
     component: Dashboard,
     title: "Dashboard",
-    icon:<AppstoreFilled />
+    icon: <AppstoreFilled />,
+    isShowItem: true,
   },
   {
     key: "3",
@@ -31,7 +33,8 @@ const AppRoutes = [
     path: "/app/department",
     component: Department,
     title: "Department",
-    icon:<FcDepartment />
+    icon: <FcDepartment />,
+    isShowItem: true,
   },
   {
     key: "4",
@@ -39,7 +42,8 @@ const AppRoutes = [
     path: "/app/leaveType",
     component: LeaveType,
     title: "LeaveType",
-    icon:<MedicineBoxFilled />
+    icon: <MedicineBoxFilled />,
+    isShowItem: true,
   },
   {
     key: "5",
@@ -47,7 +51,8 @@ const AppRoutes = [
     path: "/app/employee",
     component: Employee,
     title: "Employee",
-    icon:<FaUser />
+    icon: <FaUser />,
+    isShowItem: true,
   },
   {
     key: "6",
@@ -55,7 +60,8 @@ const AppRoutes = [
     path: "/app/salary",
     component: Salary,
     title: "Salary",
-    icon:<DollarOutlined />
+    icon: <DollarOutlined />,
+    isShowItem: true,
   },
   {
     key: "7",
@@ -63,7 +69,8 @@ const AppRoutes = [
     path: "/app/request",
     component: Request,
     title: "Request",
-    icon:<BiMeh />
+    icon: <BiMeh />,
+    isShowItem: true,
   },
   {
     key: "8",
@@ -71,7 +78,16 @@ const AppRoutes = [
     path: "/app/report",
     component: Report,
     title: "Report",
-    icon:<BiSolidReport />
+    icon: <BiSolidReport />,
+    isShowItem: true,
+  },
+  {
+    key: "9",
+    exact: true,
+    path: "/app/addEmployee",
+    component: AddEmployee,
+    title: "Add New Employee",
+    isShowItem: false,
   },
 ];
 
