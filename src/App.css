@@ -49,7 +49,7 @@
   margin: auto;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
 }
 .form-group {
   position: relative;
@@ -78,4 +78,93 @@
   outline: none;
   box-shadow: none;
   border-color: #0b5ed7;
+}
+
+.mainlayout {
+  margin: 20px;
+  overflow: initial;
+  min-height: 95vh;
+  padding-top: 0px;
+  @media (min-width: 375px) and (max-width: 576px) {
+    margin-bottom: 20vw !important;
+  }
+  @media (min-width: 576px) and (max-width: 768px) {
+    margin-bottom: 10vw !important;
+  }
+  @media (min-width: 768px) and (max-width: 1200px) {
+    margin-bottom: 8vw !important;
+  }
+}
+.siderVersion {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  position: absolute;
+  top: 85vh;
+}
+:where(.css-dev-only-do-not-override-1ae8k9u).ant-layout-header .ant-menu {
+  line-height: inherit;
+  background-color: white;
+}
+
+.add-cancel {
+  background-color: #94a3b8;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 10px;
+  height: 30px;
+
+  &:hover {
+    background-color: #94a3b8;
+    color: #fff;
+    height: 30px;
+  }
+}
+
+.sav-btn {
+  background: #28589a;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.add-row {
+  justify-content: right;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.buttonBorder-add {
+  border-color: purple;
+  border: 0;
+  border-radius: 5px;
+  color: purple;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 150ms ease-in-out;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: purple;
+    z-index: -1;
+    color: white;
+    transition: width 150ms ease-in-out;
+  }
+  
+  &:hover {
+    color: #fff;
+    &:after {
+      width: 110%;
+    }
+  }
 }

@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import { Table, Row, Col, Modal, Input, Select, Form,Button } from "antd";
+import React, { useEffect, useState } from "react";
+import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
+import { Table, Row, Col, Modal, Select, Form, Button } from "antd";
 const { Option } = Select;
 
 const Department = () => {
+  useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   const [showModal, setShowModal] = useState("");
   const columns = [
     {
@@ -17,7 +21,10 @@ const Department = () => {
       render: () => {
         return (
           <>
-            <span style={{ color: "blue",cursor:'pointer' }} onClick={openModal}>
+            <span
+              style={{ color: "blue", cursor: "pointer" }}
+              onClick={openModal}
+            >
               Edit
             </span>
             &nbsp;&nbsp;
@@ -49,9 +56,21 @@ const Department = () => {
   };
   return (
     <>
-      <Row >
-        <Col span={20}>
-          <Table columns={columns} dataSource={data} pagination={false} />
+      <Row>
+        <Col span={24}>
+          <Row>
+            <Col span={5} offset={1}>
+              <h4>Department Details</h4>
+            </Col>
+            <Col span={2} offset={14}>
+              <Button type="primary">Add</Button>
+            </Col>
+          </Row>
+          <Row style={{ marginTop: "20px" }}>
+            <Col span={24}>
+              <Table columns={columns} dataSource={data} pagination={false} />
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Modal
@@ -61,7 +80,7 @@ const Department = () => {
         onCancel={cancelModal}
         footer={null}
       >
-        <Form name="basic">          
+        <Form name="basic">
           <span style={{ fontSize: "10px" }}>Select Department</span>
           <Form.Item
             name="department"
@@ -74,7 +93,7 @@ const Department = () => {
           >
             <Select
               placeholder="Please Select Department"
-              style={{ width: "100%", height: "40px" }}             
+              style={{ width: "100%", height: "40px" }}
             >
               <Option>EEE</Option>
               <Option>ECE</Option>

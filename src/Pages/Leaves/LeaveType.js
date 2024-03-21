@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Modal, Button, Form } from "react-bootstrap";
+import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 // import styles from "../../StyleSheet/leaveType.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const LeaveType = () => {
+   useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   const [showModal, setShowModal] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());

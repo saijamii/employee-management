@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 import styles from "../Dashboard/Dashboard.module.css";
 
 const Dashboard = () => {
+  useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   return (
-    <div className="container-fluid" style={{marginTop:'7%'}}>
-      <div class="row">
+    <div className="container-fluid" style={{ marginTop: "6%" }}>
+      <div className="row">
         <div className="col-4">
           <div className={`${styles.cardStyle} card`}>
             <div
@@ -143,7 +147,9 @@ const Dashboard = () => {
               >
                 <div className="card-body d-flex flex-column">
                   <div>
-                    <h5 className="card-title text-end">REJECTED LEAVE REQUESTS</h5>
+                    <h5 className="card-title text-end">
+                      REJECTED LEAVE REQUESTS
+                    </h5>
                     <h6 className="card-subtitle mb-2 text-muted text-end">
                       4
                     </h6>
@@ -158,7 +164,9 @@ const Dashboard = () => {
               >
                 <div className="card-body d-flex flex-column">
                   <div>
-                    <h5 className="card-title text-end">APPROVED LEAVE REQUESTS</h5>
+                    <h5 className="card-title text-end">
+                      APPROVED LEAVE REQUESTS
+                    </h5>
                     <h6 className="card-subtitle mb-2 text-muted text-end">
                       4
                     </h6>

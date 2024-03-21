@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 
 const Report = () => {
-    return (
-        <h1>Report</h1>
-    )
-}
+  useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
+  return <h1>Report</h1>;
+};
 
 export default Report;
