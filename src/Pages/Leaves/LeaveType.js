@@ -56,6 +56,7 @@ const LeaveType = () => {
               src={Causal}
               height="80px"
               width="120px"
+              alt="Causal"
             />
             <Col className="design">
               <Col>Available : 1.5</Col>
@@ -103,7 +104,13 @@ const LeaveType = () => {
         </Col>
         <Col span={4}>
           <Card title="Compensatory off" bordered={false}>
-            <img className="img-style" src={Comp} height="80px" width="120px" />
+            <img
+              className="img-style"
+              src={Comp}
+              height="80px"
+              width="120px"
+              alt="Comp"
+            />
             <Col className="design">
               <Col>Available : 1.5</Col>
               <Col>Booked : 0</Col>
@@ -117,6 +124,7 @@ const LeaveType = () => {
               src={Earned}
               height="80px"
               width="120px"
+              alt="Earned"
             />
             <Col className="design">
               <Col>Available : 1.5</Col>
@@ -126,7 +134,13 @@ const LeaveType = () => {
         </Col>
         <Col span={4}>
           <Card title="Loss of Pay" bordered={false}>
-            <img className="img-style" src={Loss} height="80px" width="120px" />
+            <img
+              className="img-style"
+              src={Loss}
+              height="80px"
+              width="120px"
+              alt="Loss"
+            />
             <Col className="design">
               <Col>Available : 1.5</Col>
               <Col>Booked : 0</Col>
@@ -135,7 +149,13 @@ const LeaveType = () => {
         </Col>
         <Col span={4}>
           <Card title="Sick" bordered={false}>
-            <img className="img-style" src={Sick} height="80px" width="120px" />
+            <img
+              className="img-style"
+              src={Sick}
+              height="80px"
+              width="120px"
+              alt="Sick"
+            />
             <Col className="design">
               <Col>Available : 1.5</Col>
               <Col>Booked : 0</Col>
@@ -149,6 +169,7 @@ const LeaveType = () => {
               src={Maternity}
               height="80px"
               width="120px"
+              alt="Maternity"
             />
             <Col className="design">
               <Col>Available : 1.5</Col>
