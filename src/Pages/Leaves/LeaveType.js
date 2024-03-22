@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Card, Modal, Button, Row, Col, Table, Form, Input } from "antd";
 import Causal from "../../Images/casual.jpeg";
 import Comp from "../../Images/comp.jpeg";
@@ -15,9 +15,9 @@ const LeaveType = () => {
     setIsModalVisible(true);
   };
 
-  const handleOk = () => {
-    setIsModalVisible(false);
-  };
+  // const handleOk = () => {
+  //   setIsModalVisible(false);
+  // };
 
   const handleCancel = () => {
     setIsModalVisible(false);
