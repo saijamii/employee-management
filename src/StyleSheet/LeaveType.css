@@ -10,3 +10,27 @@ img.img-style {
 .ant-table-container {
     margin-top: 31px;
 }
+.festivals-table-container {
+    margin: 20px;
+  }
+  
+  .festivals-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .festivals-table th,
+  .festivals-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .festivals-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .festivals-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
