@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Modal, Button, Row, Col, Table, Form, Input } from "antd";
+import { Card, Modal, Button, Row, Col, Form, Input } from "antd";
 import Causal from "../../Images/casual.jpeg";
 import Comp from "../../Images/comp.jpeg";
 import Earned from "../../Images/earned.jpeg";
@@ -10,7 +10,7 @@ import "../../StyleSheet/LeaveType.css";
 
 const LeaveType = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [festivals, setFestivals] = useState([
+  const [festivals] = useState([
     { name: "New Year", date: "January 1st",slogans:"Wishing you a Happy New Year!" },
     { name: "Valentine's Day", date: "February 14th",slogans:"Spread love and happiness!" },
     { name: "Easter", date: "April 4th",slogans:"Celebrate the joy of resurrection!" },
