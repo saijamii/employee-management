@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table, Row, Col, Modal, Input, Select, Form, Button } from "antd";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 
 const Employee = () => {
-  UseDocumentTitle(window.location.pathname);
+  useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   const [showModal, setShowModal] = useState("");
   const columns = [
     {
@@ -97,15 +100,17 @@ const Employee = () => {
     <>
       <Row>
         <Col span={24}>
-          <Row style={{ marginTop: "10vh" }}>
+          <Row>
             <Col span={5} offset={1}>
               <h4>Employee Details</h4>
             </Col>
             <Col span={2} offset={14}>
-              <Button type="primary">Add</Button>
+              <Link to={"/app/addEmployee"}>
+                <Button type="primary">Add</Button>
+              </Link>
             </Col>
           </Row>
-          <Row style={{ marginTop: "20px" }}>
+          <Row>
             <Col span={24}>
               <Table columns={columns} dataSource={data} pagination={false} />
             </Col>

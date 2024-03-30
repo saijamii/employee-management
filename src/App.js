@@ -5,6 +5,7 @@ import { AppContext } from "./Config/AppContext";
 import Authenticated from "./Common/Authenticated";
 
 export default function App() {
+  console.log(process.env.REACT_APP_TEST,"valueFromEnv")
   const contextValue = [
     {
       AppRoutes: AppRoutes,

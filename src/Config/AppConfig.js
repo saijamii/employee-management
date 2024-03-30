@@ -1,4 +1,4 @@
 const appConfig = {
-  appVersion: "v16.03.24.06",
+  appVersion: "v20.03.24.04",
 };
 export default appConfig;

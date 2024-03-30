@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 import { Table, Row, Col, Modal, Select, Form, Button } from "antd";
 const { Option } = Select;
 
 const Department = () => {
-  UseDocumentTitle(window.location.pathname);
+  useEffect(() => {
+    UseDocumentTitle(window.location.pathname);
+  }, []);
   const [showModal, setShowModal] = useState("");
   const columns = [
     {
@@ -56,7 +58,7 @@ const Department = () => {
     <>
       <Row>
         <Col span={24}>
-          <Row style={{ marginTop: "10vh" }}>
+          <Row>
             <Col span={5} offset={1}>
               <h4>Department Details</h4>
             </Col>

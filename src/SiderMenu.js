@@ -33,7 +33,7 @@ function SiderMenu({ siderClosed, onMenuItemClick }) {
       >
         {AppRoutes?.map(
           (item) =>
-            item.title && (
+            item.isShowItem && (
               <Menu.Item
                 key={item.key}
                 icon={item.icon}
