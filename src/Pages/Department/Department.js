@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 import { Table, Row, Col, Modal, Select, Form, Button } from "antd";
+import { useLocalStorage } from "../../Hooks/useLocalStorage";
 const { Option } = Select;
 
 const Department = () => {
+  const [dataValue, setDataValue] = useLocalStorage("obj1", []);
+  console.log(dataValue, "dataValue");
   useEffect(() => {
     UseDocumentTitle(window.location.pathname);
   }, []);
-  const [showModal, setShowModal] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const columns = [
     {
       title: "Department Name",
@@ -50,6 +53,18 @@ const Department = () => {
   ];
   const openModal = () => {
     setShowModal(true);
+    setDataValue([
+      {
+        title: "Department Name",
+        dataIndex: "name",
+        key: "name",
+      },
+      {
+        width: "10%",
+        title: "Action",
+        key: "action",
+      },
+    ]);
   };
   const cancelModal = () => {
     setShowModal(false);
@@ -63,7 +78,9 @@ const Department = () => {
               <h4>Department Details</h4>
             </Col>
             <Col span={2} offset={14}>
-              <Button type="primary">Add</Button>
+              <Button type="primary" onClick={openModal}>
+                Add
+              </Button>
             </Col>
           </Row>
           <Row style={{ marginTop: "20px" }}>
