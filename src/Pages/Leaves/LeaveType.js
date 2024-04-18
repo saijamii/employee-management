@@ -1,391 +1,351 @@
-import React, { useEffect, useState } from "react";
-import { Card, Modal, Button, Form } from "react-bootstrap";
-import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
-// import styles from "../../StyleSheet/leaveType.css";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from "react";
+import {
+  Card,
+  Modal,
+  Button,
+  Row,
+  Col,
+  Form,
+  Input,
+  Select,
+  DatePicker,
+} from "antd";
+import Causal from "../../Images/casual.jpeg";
+import Comp from "../../Images/comp.jpeg";
+import Earned from "../../Images/earned.jpeg";
+import Loss from "../../Images/loss.jpeg";
+import Sick from "../../Images/sick.jpeg";
+import Maternity from "../../Images/Maternity.jpeg";
+import "../../StyleSheet/LeaveType.css";
 
+const { Option } = Select;
+const { RangePicker } = DatePicker;
+const { TextArea } = Input;
 const LeaveType = () => {
-   useEffect(() => {
-    UseDocumentTitle(window.location.pathname);
-  }, []);
-  const [showModal, setShowModal] = useState("");
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [festivals] = useState([
+    {
+      name: "New Year",
+      date: "January 1st",
+      slogans: "Wishing you a Happy New Year!",
+    },
+    {
+      name: "Valentine's Day",
+      date: "February 14th",
+      slogans: "Spread love and happiness!",
+    },
+    {
+      name: "Easter",
+      date: "April 4th",
+      slogans: "Celebrate the joy of resurrection!",
+    },
+    {
+      name: "Christmas",
+      date: "December 25th",
+      slogans: "Merry Christmas and Happy Holidays!",
+    },
+    {
+      name: "Holi",
+      date: "March 18th",
+      slogans: "Splash colors of joy and happiness!",
+    },
+    {
+      name: "Diwali",
+      date: "October 28th",
+      slogans: "Illuminate your life with happiness and prosperity!",
+    },
+    {
+      name: "Thanksgiving",
+      date: "November 25th",
+      slogans: "Gratitude turns what we have into enough!",
+    },
+    { name: "Independence Day", date: "July 4th", slogans: "Proud to be free" },
+    {
+      name: "Navaratri",
+      date: "October 7th - October 15th",
+      slogans: "May goddess Durga bless you with strength and prosperity!",
+    },
+    {
+      name: "Hanukkah",
+      date: "November 28th - December 6th",
+      slogans: "Wishing you a festival of lights filled with love and joy!",
+    },
+    {
+      name: "Ramadan",
+      date: "April 2nd - May 1st",
+      slogans: "Ramadan Mubarak!",
+    },
+    {
+      name: "Ganesh Chaturthi",
+      date: "August 31st",
+      slogans: "Lord Ganesha bless you with happiness and success!",
+    },
 
-  const handleClose = () => setShowModal("");
-  const handleShow = (value) => setShowModal(value);
+    {
+      name: "Day of the Dead",
+      date: "November 1st - November 2nd",
+      slogans: "Honoring the spirits of our loved ones!",
+    },
+    { name: "Eid al-Fitr", date: "May 2nd", slogans: "Eid Mubarak!" },
+    {
+      name: "Raksha Bandhan",
+      date: "August 22nd",
+      slogans: "Celebrate the bond of love and protection!",
+    },
+    {
+      name: "Onam",
+      date: "August 22nd",
+      slogans: "May the spirit of Onam fill your home with joy and prosperity!",
+    },
+    {
+      name: "Pongal",
+      date: "January 15th",
+      slogans: "Pongalo Pongal! Wishing you prosperity and happiness!",
+    },
+    {
+      name: "Makar Sankranti",
+      date: "January 14th",
+      slogans: "Wishing you a harvest of happiness and prosperity!",
+    },
+    {
+      name: "Lohri",
+      date: "January 13th",
+      slogans: "Wishing you joy and warmth on Lohri!",
+    },
+    {
+      name: "Baisakhi",
+      date: "April 13th",
+      slogans: "'Nanak Naam Chardi Kala, Tere Bhane Sarbat Da Bhala!",
+    },
+  ]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    handleClose();
+  const convertToDate = (dateString) => {
+    const parts = dateString.split(" ");
+    const month = parts[0];
+    const day = parseInt(parts[1]);
+    return new Date(`${month} ${day}`);
+  };
+
+  // Sort festivals by month
+  festivals.sort((a, b) => convertToDate(a.date) - convertToDate(b.date));
+
+  console.log(festivals);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  // const handleOk = () => {
+  //   setIsModalVisible(false);
+  // };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
   };
 
   return (
-    <Card className="card-design all mt-5">
-      <div className="container">
-        <div className="row claass">
-          <div className="col-md-2">
-            <Card onClick={() => handleShow("Casual")}>
-              <Card.Body>
-                <Card.Title className="first">Casual</Card.Title>
-                <Card.Text>
-                  <i
-                    className="bi bi-umbrella-fill"
-                    style={{ marginLeft: "53px", fontSize: "52px" }}
-                  ></i>
-                </Card.Text>
-                <Card.Text className="align-sentace">Available : 10</Card.Text>
-                <Card.Text className="align-Booked">Booked : 2</Card.Text>
-              </Card.Body>
-            </Card>
+    <div>
+      <Col span={24}>
+        <Row justify={"end"}>
+          <Button
+            onClick={showModal}
+            style={{ backgroundColor: "#1677ff", color: "#fff" }}
+          >
+            Apply Leave
+          </Button>
+        </Row>
+      </Col>
+      <Row gutter={24} style={{ marginTop: "20px" }}>
+        <Col span={4}>
+          <Card title="Casual" bordered={false}>
+            <img
+              className="img-style"
+              src={Causal}
+              height="80px"
+              width="120px"
+              alt="Causal"
+            />
+            <Col className="design">
+              <Col>Available : 1.5</Col>
+              <Col>Booked : 0</Col>
+            </Col>
             <Modal
-              show={
-                showModal === "Casual" ||
-                showModal === "Compensatoryy" ||
-                showModal === "Earned Leves" ||
-                showModal === "Loss Of Pay" ||
-                showModal === "Sick" ||
-                showModal === "Paternity"
-              }
-              onHide={handleClose}
+              title="Leave Booking"
+              visible={isModalVisible}
+              onCancel={handleCancel}
+              footer={null} // Removes the footer buttons (OK and Cancel)
             >
-              <Modal.Header closeButton>
-                <Modal.Title>
-                  {showModal === "Casual" && "Casual Leave"}
-                  {showModal === "Compensatoryy" && "Compensatory Leave"}
-                  {showModal === "Earned Leves" && "Earned Leaves"}
-                  {showModal === "Loss Of Pay" && "Loss Of Pay"}
-                  {showModal === "Sick" && "Sick Leave"}
-                  {showModal === "Paternity" && "Paternity Leave"}
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <Form onSubmit={handleSubmit}>
-                  <Form.Group controlId="employeeId">
-                    <Form.Label>Employee ID:</Form.Label>
-                    <Form.Control
-                      type="texts"
-                      placeholder="Enter Employee ID"
-                    />
-                  </Form.Group>
+              <Form
+              // Your form components and logic here
+              >
+                <span>employee ID</span>
 
-                  {/* <Form.Group controlId="leaveType">
-                    <Form.Label style={{marginTop:"10px"}}>Leave Type:</Form.Label>
-                    <Form.Control as="select">
-                      <option>Select Leave Type</option>
-                      <option>Casual Leave</option>
-                      <option>Compensatory Leave</option>
-                      <option>Earned Leves</option>
-                      <option>Sick Leave</option>
-                      <option>Loss Of Pay</option>
-                      <option>Paternity</option>
-                    </Form.Control>
-                  </Form.Group> */}
+                <Form.Item
+                  name="name"
+                  rules={[
+                    { required: true, message: "Please input your name!" },
+                  ]}
+                >
+                  <Input />
+                </Form.Item>
+                <span>Leave Type</span>
 
-                  <Form.Group controlId="startDate">
-                    <Form.Label style={{ marginTop: "10px" }}>
-                      Date: From
-                    </Form.Label>
-                    <br />
-                    <DatePicker
-                      selected={startDate}
-                      onChange={(date) => setStartDate(date)}
-                    />
-                  </Form.Group>
+                <Form.Item
+                  name="leave_type"
+                  rules={[
+                    { required: true, message: "Please input your email!" },
+                  ]}
+                >
+                  <Select>
+                    <Option value="casual">Casual</Option>
+                    <Option value="compensatory_off">Compensatory off</Option>
+                    <Option value="earned_leave">Earned Leave</Option>
+                    <Option value="loss_of_pay">Loss Of Pay</Option>
+                    <Option value="sick">Sick Leave</Option>
+                    <Option value="maternity">Maternity Leave</Option>
+                  </Select>
+                </Form.Item>
+                <span>Date</span>
+                <Form.Item
+                  name="date"
+                  rules={[
+                    { required: true, message: "Please input your email!" },
+                  ]}
+                >
+                  <RangePicker style={{ width: "100%" }} />
+                </Form.Item>
+                <span>Team Email ID</span>
+                <Form.Item
+                  name="email_id"
+                  rules={[
+                    { required: true, message: "Please input your email!" },
+                  ]}
+                >
+                  <Input />
+                </Form.Item>
+                <span>Reason for Leave</span>
+                <Form.Item
+                  name="Leave_reason"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please input your Reason for Leave!",
+                    },
+                  ]}
+                >
+                  <TextArea style={{ width: "100%", borderRadius: "5px" }} />
+                </Form.Item>
+                {/* Add more Form Items as needed */}
 
-                  <Form.Group controlId="endDate">
-                    <Form.Label style={{ marginTop: "10px" }}>
-                      Date: End
-                    </Form.Label>
-                    <br />
-                    <DatePicker
-                      selected={endDate}
-                      onChange={(date) => setEndDate(date)}
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="teamEmailId">
-                    <Form.Label style={{ marginTop: "10px" }}>
-                      Team Email Id:
-                    </Form.Label>
-                    <Form.Control
-                      type="email"
-                      placeholder="Enter Team Email Id"
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="reasonForLeave">
-                    <Form.Label style={{ marginTop: "10px" }}>
-                      Reason For Leave:
-                    </Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      placeholder="Enter Reason For Leave"
-                    />
-                  </Form.Group>
-                </Form>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                  Cancel
-                </Button>
-                <Button variant="primary" type="submit">
-                  Submit
-                </Button>
-              </Modal.Footer>
+                <Form.Item>
+                  <Button type="primary" htmlType="submit">
+                    Submit
+                  </Button>
+                  <Button style={{ marginLeft: "5px" }} onCancel={()=>setIsModalVisible(false)}>
+                    Cancel
+                  </Button>
+                </Form.Item>
+              </Form>
             </Modal>
-          </div>
-          <div className="col-md-2">
-            <Card onClick={() => handleShow("Compensatoryy")}>
-              <Card.Body>
-                <Card.Title className="second">Compensatoryy</Card.Title>
-                <Card.Text>
-                  <i
-                    class="bi bi-person-plus"
-                    style={{ marginLeft: "53px", fontSize: "52px" }}
-                  ></i>
-                </Card.Text>
-                <Card.Text className="align-sentace">Available : 10</Card.Text>
-                <Card.Text className="align-Booked">Booked : 2</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-2">
-            <Card onClick={() => handleShow("Earned Leves")}>
-              <Card.Body>
-                <Card.Title className="third">Earned Leves</Card.Title>
-                <Card.Text>
-                  <i
-                    class="bi bi-person-heart"
-                    style={{ marginLeft: "53px", fontSize: "52px" }}
-                  ></i>
-                </Card.Text>
-                <Card.Text className="align-sentace">Available : 10</Card.Text>
-                <Card.Text className="align-Booked">Booked : 2</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-2">
-            <Card onClick={() => handleShow("Loss Of Pay")}>
-              <Card.Body>
-                <Card.Title className="fourth">Loss Of Pay</Card.Title>
-                <Card.Text>
-                  <i
-                    class="bi bi-calendar2-plus"
-                    style={{ marginLeft: "53px", fontSize: "52px" }}
-                  ></i>
-                </Card.Text>
-                <Card.Text className="align-sentace">Available : 10</Card.Text>
-                <Card.Text className="align-Booked">Booked : 2</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-2">
-            <Card onClick={() => handleShow("Sick")}>
-              <Card.Body>
-                <Card.Title className="fifth">Sick</Card.Title>
-                <Card.Text>
-                  <i
-                    class="bi bi-lungs-fill"
-                    style={{ marginLeft: "53px", fontSize: "52px" }}
-                  ></i>
-                </Card.Text>
-                <Card.Text className="align-sentace">Available : 10</Card.Text>
-                <Card.Text className="align-Booked">Booked : 2</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-2">
-            <Card onClick={() => handleShow("Paternity")}>
-              <Card.Body>
-                <Card.Title className="sixth">Paternity</Card.Title>
-                <Card.Text>
-                  <i
-                    class="bi bi-person-wheelchair"
-                    style={{ marginLeft: "53px", fontSize: "52px" }}
-                  ></i>
-                </Card.Text>
-                <Card.Text className="align-sentace">Available : 10</Card.Text>
-                <Card.Text className="align-Booked">Booked : 2</Card.Text>
-              </Card.Body>
-            </Card>
-          </div>
-        </div>
-        <div className="table-data">
-          <div>
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col">Dates</th>
-                  <th scope="col">Festivals</th>
-                  <th scope="col">Slogans</th>
-                  <th scope="col">
-                    <div class="btn-group">
-                      <button
-                        class="btn btn-secondary btn-sm dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Only Holidays
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a class="dropdown-item" href="/#">
-                            Leaves
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="/#">
-                            Festival Leaves
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 1-Jan
-                  </th>
-                  <td>New Year</td>
-                  <td>Otto</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 25-Dec
-                  </th>
-                  <td>Christmas</td>
-                  <td>Thornton</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 30-Nov
-                  </th>
-                  <td>Diwali</td>
-                  <td>Larry the Bird</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 24-Mar
-                  </th>
-                  <td>Holi</td>
-                  <td>Your slogan here</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 12-Apr
-                  </th>
-                  <td>Eid</td>
-                  <td>Your slogan here</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 1-Jan
-                  </th>
-                  <td>New Year</td>
-                  <td>Otto</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 25-Dec
-                  </th>
-                  <td>Christmas</td>
-                  <td>Thornton</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"> </i> 30-Nov
-                  </th>
-                  <td>Diwali</td>
-                  <td>Larry the Bird</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    <i class="bi bi-calendar-check"></i> 24-Mar
-                  </th>
-                  <td>Holi</td>
-                  <td>Your slogan here</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"></i> 12-Apr
-                  </th>
-                  <td>Eid</td>
-                  <td>Your slogan here</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    <i class="bi bi-calendar-check"></i> 1-Jan
-                  </th>
-                  <td>New Year</td>
-                  <td>Otto</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"></i> 25-Dec
-                  </th>
-                  <td>Christmas</td>
-                  <td>Thornton</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    <i class="bi bi-calendar-check"></i> 30-Nov
-                  </th>
-                  <td>Diwali</td>
-                  <td>Larry the Bird</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"></i> 24-Mar
-                  </th>
-                  <td>Holi</td>
-                  <td>Your slogan here</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                    {" "}
-                    <i class="bi bi-calendar-check"></i>12-Apr
-                  </th>
-                  <td>Eid</td>
-                  <td>Your slogan here</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+          </Card>
+        </Col>
+        <Col span={4}>
+          <Card title="Compensatory off" bordered={false}>
+            <img
+              className="img-style"
+              src={Comp}
+              height="80px"
+              width="120px"
+              alt="Comp"
+            />
+            <Col className="design">
+              <Col>Available : 1.5</Col>
+              <Col>Booked : 0</Col>
+            </Col>
+          </Card>
+        </Col>
+        <Col span={4}>
+          <Card title="Earned Leave" bordered={false}>
+            <img
+              className="img-style"
+              src={Earned}
+              height="80px"
+              width="120px"
+              alt="Earned"
+            />
+            <Col className="design">
+              <Col>Available : 1.5</Col>
+              <Col>Booked : 0</Col>
+            </Col>
+          </Card>
+        </Col>
+        <Col span={4}>
+          <Card title="Loss of Pay" bordered={false}>
+            <img
+              className="img-style"
+              src={Loss}
+              height="80px"
+              width="120px"
+              alt="Loss"
+            />
+            <Col className="design">
+              <Col>Available : 1.5</Col>
+              <Col>Booked : 0</Col>
+            </Col>
+          </Card>
+        </Col>
+        <Col span={4}>
+          <Card title="Sick" bordered={false}>
+            <img
+              className="img-style"
+              src={Sick}
+              height="80px"
+              width="120px"
+              alt="Sick"
+            />
+            <Col className="design">
+              <Col>Available : 1.5</Col>
+              <Col>Booked : 0</Col>
+            </Col>
+          </Card>
+        </Col>
+        <Col span={4}>
+          <Card title="Maternity Leaves" bordered={false}>
+            <img
+              className="img-style"
+              src={Maternity}
+              height="80px"
+              width="120px"
+              alt="Maternity"
+            />
+            <Col className="design">
+              <Col>Available : 1.5</Col>
+              <Col>Booked : 0</Col>
+            </Col>
+          </Card>
+        </Col>
+      </Row>
+      <div className="festivals-table-container">
+        <table className="festivals-table">
+          <thead>
+            <tr>
+              <th>Festival</th>
+              <th>Date</th>
+              <th>slogans</th>
+            </tr>
+          </thead>
+          <tbody>
+            {festivals.map((festival, index) => (
+              <tr key={index}>
+                <td>{festival.name}</td>
+                <td>{festival.date}</td>
+                <td>{festival.slogans}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </Card>
+    </div>
   );
 };
 
