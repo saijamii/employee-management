@@ -1,11 +1,23 @@
 import React, { useEffect } from "react";
 import { UseDocumentTitle } from "../../Common/UseDocumentTitle";
 import styles from "../Dashboard/Dashboard.module.css";
+import axios from "axios";
 
 const Dashboard = () => {
   useEffect(() => {
     UseDocumentTitle(window.location.pathname);
+    getUsers();
   }, []);
+
+  const getUsers = async () => {
+    try {
+      const { data } = await axios.get("/users");
+      console.log(data, "data");
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
   return (
     <div className="container-fluid" style={{ marginTop: "6%" }}>
       <div className="row">
